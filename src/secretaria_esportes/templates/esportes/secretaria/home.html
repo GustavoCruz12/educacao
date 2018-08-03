@@ -1,0 +1,63 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Secretaria Municipal de Cultura, Esportes e Turismo</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/secretaria_esportes/botao-esporte.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    Criada pela Reforma Administrativa, Lei Complementar N.º 165/2006, cabe à Secretaria da Cultura, Esportes e Turismo incentivar e apoiar a produção cultural, as atividades esportivas, de lazer e de turismo do Município, dando-lhes caráter educativo. É responsabilidade do órgão promover e preservar o patrimônio histórico e cultural, cuidar e fomentar o acervo da Biblioteca Municipal, gerenciar a realização de eventos na área de sua competência, desenvolver convênios com órgãos federais, estaduais e entidades particulares.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                        <p class="text-justify">
+                            Mantém, ainda, a Escola de Artes, estimulando a produção cultural e a formação de novos artistas, bem como a participação da população em eventos esportivos e de lazer, promovendo competições, cursos e seminários.
+                        </p>
+                        <p class="text-justify">
+                            Também assessora e gerencia a implantação e a utilização dos equipamentos necessários para lazer e turismo e cursos para geração e incremento da renda familiar. Todas essas atividades são fomentadas por meio de programas e eventos específicos. A Orquestra Municipal de Metais e Percussão de Serrana, bem como a Banda Marcial estão vinculadas à Secretaria Municipal da Cultura, Esportes e Turismo. Os principais eventos organizados pelo órgão são a Noite Sagrada, Festival de Artesões e Artesanatos, Festival da Viola, Ballet e Sapateado, Mostra de Teatro e Semana Cultural.
+                        </p>
+
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_esportes.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

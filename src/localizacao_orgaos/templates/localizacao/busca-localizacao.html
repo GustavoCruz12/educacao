@@ -1,0 +1,65 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h1><img src="{% static 'images/localizacao/telefones.png' %}" alt=""> Resultado da pesquisa</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% if busca_localizacao %}
+                                {% for loc in busca_localizacao %}
+                                    <table class="table table-hover">
+                                        <caption><h3  class="blue">{{ loc.orgao }}</h3></caption>
+                                        <tr><td><strong>Endereço:</strong></td><td> {{ loc.endereco }}</td></tr>
+                                        <tr><td><strong>Bairro: </strong></td><td>{{ loc.bairro }}</td></tr>
+                                        <tr><td><strong>Telefone(s): </strong></td><td>{{ loc.telefone }}</td></tr>
+                                        <tr><td><strong>Horário de funcionamento: </strong></td><td>{{ loc.horario }}</td></tr>
+                                    </table>
+                                {% endfor %}
+                                <div class="pagination">
+                                    <h5>
+                                        {% if page_obj.has_previous %} <a href="?q={{ search_term }}&page={{ page_obj.previous_page_number }}">anterior</a> {% endif %} <span class="page-current"> P&aacute;gina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. </span> {% if page_obj.has_next %} <a href="?q={{ search_term }}&page={{ page_obj.next_page_number }}">pr&oacute;xima</a>{% endif %}
+                                    </h5>
+                                </div>
+                                <div class="clear"></div>
+                            {% else %}
+                                <br /><br />
+                                 <div class="alert alert-warning">
+                                <h4>Esta pesquisa não encontrou o termo pesquisado<br />Utilize os filtros para realizar a pesquisar novamente.</h4>
+                                <br />
+                                <a href="{% url 'localizacao:localizacao_view' %}" class="btn btn-warning">voltar a pesquisa</a>
+                                 </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

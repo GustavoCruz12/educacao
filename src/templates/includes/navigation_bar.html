@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<div class="container">
+    <nav class="navbar">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse main-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active blue-border-top"><a data-color="#fff" href="/">Ínicio</a></li>
+                <li class="yellow-border-top"><a data-color="#fff" href="{% url 'transparencia:transparencia_view' %}">Transparência</a>
+                </li>
+                <li class="dropdown blue-border-top"><a data-color="#fff" href="#">Serviços</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a data-color="#fff" href="{% url 'diario_oficial:diario_view' %}">Diário Oficial</a></li>
+                        <li><a data-color="#fff" href="{% url 'licitacoes:modalidade_view' %}">Licitações</a></li>
+                        <li><a data-color="#fff" href="{% url 'leis:leis_view' %}">Leis Municípais</a></li>
+                        <li><a data-color="#fff" href="{% url 'administracao:administracao_cidadao' %}">Guias de IPTU/Certidão Negativa</a></li>
+                        <li><a data-color="#fff" href="{% url 'administracao:empresa' %}">Empresas</a></li>
+                        <li><a data-color="#fff" href="https://e-gov.betha.com.br/e-nota/login.faces?lastUrl=/selecaodemodulo.faces">FLY E-NOTA</a></li>
+                        <li><a data-color="#fff" href="https://e-gov.betha.com.br/livroeletronico2">FLY LIVRO ELETRÔNICO</a></li>
+                        <li><a data-color="#fff" href="{% url 'ouvidoria:home' %}">Ouvidoria</a></li>
+                        <li><a data-color="#fff" href="{% url 'transparencia:transparencia_view' %}">Transparência</a></li>
+                        <li><a data-color="#fff" href="{% url 'localizacao:localizacao_view' %}">Telefones e endereços</a></li>
+                        <li><a data-color="#fff" href="{% url 'concursos:tipo_concurso_view' %}">Concursos</a></li>
+                        <li><a data-color="#fff" href="{% url 'saude:saude_escala_list_view' %}">Escalas Médicas</a></li>
+                        <li><a data-color="#fff" href="{% url 'saude:saude_medicamento_url' %}">Medicamentos Padronizados</a></li>
+                   </ul>
+                </li>
+                <li class="dropdown yellow-border-top"><a data-color="#fff" href="#">Secretarias</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a data-color="#fff" href="{% url 'administracao:administracao_view' %}">Administração e Finanças</a></li>
+                        <li><a data-color="#fff" href="{% url 'social:social' %}">Assistência Social</a></li>
+                        <li><a data-color="#fff" href="{% url 'educacao:educacao' %}">Educação</a></li>
+                        <li><a data-color="#fff" href="{% url 'esportes:esporte' %}">Cultura, Esportes e Turismo</a></li>
+                        <li><a data-color="#fff" href="{% url 'infraestrutura:infraestrutura' %}">Infraestrutura</a></li>
+                        <li><a data-color="#fff" href="{% url 'saude:saude_view' %}">Saúde</a></li>
+                    </ul>
+                </li>
+                <li class="blue-border-top"><a data-color="#fff" href="{% url 'serrana:hoje' %}">A cidade</a></li>
+
+                <li class="dropdown yellow-border-top"><a data-color="#fff" href="#">Turismo</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a data-color="#fff" href="{% url 'turismo:turismo' %}">Informações gerais</a></li>
+                        <li><a data-color="#fff" href="{% url 'turismo:pontos_turisticos' %}">Pontos turísticos</a></li>
+                   </ul>
+                </li>
+                <li class="blue-border-top"><a data-color="#fff" href="{% url 'contato:contato_view' %}">Contato</a>
+                </li>
+            </ul>
+            <div class="pull-right right-nav pull-right right-nav visible-md visible-lg">
+                <span><a class="search-link" href="#"><i class="fa fa-search"></i></a></span>
+            </div>
+        </div>
+        <!-- / nav-collapse -->
+    </nav>
+    <!-- / navbar main-navbar -->
+</div>

@@ -1,0 +1,355 @@
+{% load staticfiles %}
+<!-- Start "aside sidebar" -->
+<aside class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <div class="main-title clearfix">
+            <h3 class="title border-b-dark-white">Redes Sociais <span class="border orange-bg"></span></h3>
+        </div>
+        <div class="sidebar-widget-contnet clrearfix">
+            <div class="social-counter-perant">
+                <div class="social-box-grid">
+                    <div id="fb-root"></div>
+                    <a href="https://www.facebook.com/oficialprefeituraserrana/">
+                        <div class="social-counter-box facebook-bg">
+                            <div class="social-counter-icon">
+                                <i class="fa fa-facebook"></i>
+
+                            </div>
+                            <div class="social-counter-data">
+                                <span class="fans-counter">Facebook</span>
+                                <span class="follow-title">Ofícial</span>
+                            </div>
+                            <div class="social-confirm-icon confirmed">
+                                <i class="fa fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <!-- / social-counter-box facebook-bg -->
+                    </a>
+                    <!-- / social-box-item -->
+                </div>
+                <!-- social-box-grid -->
+                <div class="social-box-grid">
+                    <a class="social-box-item" href="https://www.youtube.com/channel/UCEJRaGsmAUYq4kvMCtD97Fg">
+                        <div class="social-counter-box youtube-bg">
+                            <div class="social-counter-icon">
+                                <i class="fa fa-youtube"></i>
+                            </div>
+                            <div class="social-counter-data">
+                                <span class="fans-counter">Youtube</span>
+                                <span class="follow-title">Ofícial</span>
+                            </div>
+                            <div class="social-confirm-icon confirmed">
+                                <i class="fa fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <!-- / social-counter-box facebook-bg -->
+                    </a>
+                    <!-- / social-box-item -->
+                </div>
+                <!-- social-box-grid -->
+            </div>
+            <!-- / social-counter-perant -->
+        </div>
+        <!-- sidebar-widget-contnet -->
+    </div>
+    <!-- End "sidebar-widget" -->
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <div class="sidebar-widget-contnet  margin-b-widget clrearfix">
+            <!-- Start "sidebar taps" -->
+
+            <div class="sidebar-taps">
+                <!-- Nav tabs -->
+                <ul class="sidebar-taps-nav nav -tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#Uteis" aria-controls="Uteis" role="tab" data-toggle="tab">Cidadão</a></li>
+                    <li role="presentation"><a href="#Recent" aria-controls="Recent" role="tab" data-toggle="tab">Empresa</a></li>
+                    <li role="presentation"><a href="#Comments" aria-controls="Comments" role="tab" data-toggle="tab">Comunicação</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Uteis">
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="">
+                                <div class="image-block" style="background-image:url({% static "images/diario_oficial/diario-oficial.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'diario_oficial:diario_view' %}"><div class="news-tag-text">Diário Oficial</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'diario_oficial:diario_view' %}"><span>Divulgação e publicação dos atos dos órgãos da administração</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/unidade_medica.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'saude:saude_escala_list_view' %}"><div class="news-tag-text">Escalas Médicas</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'saude:saude_escala_list_view' %}"><span>Confira a escala de trabalho da saúde</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ://Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/cidadao.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="https://e-gov.betha.com.br/cdweb/03111-011/contribuinte/main.faces"><div class="news-tag-text">IPTU/CERTIDÃO NEGATIVA</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'administracao:administracao_cidadao' %}"><span>Acessar guias de IPTU, débitos e certidões negativa de débito</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/transparencia.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'transparencia:transparencia_view' %}"><div class="news-tag-text">Portal Transparência</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'transparencia:transparencia_view' %}"><span>Transparência na gestão municipal</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'ouvidoria:home' %}">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/ouvidoria.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'ouvidoria:home' %}"><div class="news-tag-text">Ouvidoria Municipal</div></a>
+                                <div class="post-info">
+                                    <span>Seu canal de comunicação com a Prefeitura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/telefones.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'localizacao:localizacao_view' %}"><div class="news-tag-text">Telefones e endereços</div></a>
+                                <div class="post-info">
+                                    <span>Telefones e endereços dos orgão públicos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'concursos:tipo_concurso_view' %}">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/concursos.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'concursos:tipo_concurso_view' %}"><div class="news-tag-text">Concursos Públicos</div></a>
+                                <div class="post-info">
+                                    <span>Concursos Públicos e Precessos Seletivos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Recent">
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'administracao:empresa' %}">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/empresa.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'administracao:empresa' %}"><div class="news-tag-text">Apoio a Empresas</div></a>
+                                <div class="post-info">
+                                    <span>Apoio a empresas e empreendedores </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End "image-link-block footer-image-link-block" -->
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'leis:leis_view' %}">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/leis.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'leis:leis_view' %}"><div class="news-tag-text">Leis Municipais</div></a>
+                                <div class="post-info">
+                                    <span>Leis, Decretos, Portarias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End "image-link-block footer-image-link-block" -->
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="https://e-gov.betha.com.br/e-nota/login.faces?lastUrl=/selecaodemodulo.faces">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/nota.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="https://e-gov.betha.com.br/e-nota/login.faces?lastUrl=/selecaodemodulo.faces"><div class="news-tag-text">Fly E-NOTA</div></a>
+                                <div class="post-info">
+                                    <span>Nota Fiscal Eletrônica</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="https://e-gov.betha.com.br/livroeletronico2">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/nota.png"%});">
+
+                                </div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="https://e-gov.betha.com.br/livroeletronico2"><div class="news-tag-text">Fly LIVRO ELETRônico</div></a>
+                                <div class="post-info">
+                                    <span>Livro Eletrônico</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End "image-link-block footer-image-link-block" -->
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'licitacoes:modalidade_view' %}">
+                                <div class="image-block" style="background-image:url({% static "images/servicos_icons/licitacoes.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'licitacoes:modalidade_view' %}"><div class="news-tag-text">Licitações</div></a>
+                                <div class="post-info">
+                                    <span>Licitações, Editais, Contratos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End "image-link-block footer-image-link-block" -->
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Comments">
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'galerias:galeria_list' %}">
+                                <div class="image-block" style="background-image:url({% static "images/galerias/botao-galeria.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'galerias:galeria_list' %}"><div class="news-tag-text">Galerias de imagens</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'galerias:galeria_list' %}"><span></span>Imagens de atividades e eventos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ://Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="https://www.youtube.com/channel/UCEJRaGsmAUYq4kvMCtD97Fg">
+                                <div class="image-block" style="background-image:url({% static "images/videos/botao-video.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="https://www.youtube.com/channel/UCEJRaGsmAUYq4kvMCtD97Fg"><div class="news-tag-text">Videos</div></a>
+                                <div class="post-info">
+                                    <a href="https://www.youtube.com/channel/UCEJRaGsmAUYq4kvMCtD97Fg"><span>Canal de vídeos ofícial da prefeitura</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'eventos:evento_list' %}">
+                                <div class="image-block" style="background-image:url({% static "images/agenda_eventos/botao-eventos.png" %});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'eventos:evento_list' %}"><div class="news-tag-text">Agenda de eventos</div></a>
+                                <div class="post-info">
+                                    <a href="{% url 'eventos:evento_list' %}"><span>Agenda com as principais atividades da administração</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start "image-link-block" -->
+                        <div class="image-link-block footer-image-link-block clearfix">
+                            <a href="{% url 'noticias:noticia_list' %}">
+                                <div class="image-block" style="background-image:url({% static "images/noticias/botao-noticias.png"%});"></div>
+                            </a>
+                            <div class="linke-block">
+                                <a href="{% url 'noticias:noticia_list' %}"><div class="news-tag-text">Noticias</div></a>
+                                <div class="post-info">
+                                    <span>Noticias da administração municipal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End "sidebar taps" -->
+            <!-- sidebar-widget-contnet -->
+        </div>
+       <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            {% if banner_337x280 %}
+                {% for bann3 in banner_337x280 %}
+                    <div class="main-title clearfix">
+                        <h3 class="title border-b-dark-white orange text-center">{{ bann3.titulo }} </h3>
+                    </div>
+                    <div class="sidebar-widget-contnet clrearfix">
+                        <!-- Start "adv block" -->
+                        <div class="adv-blcok clearfix">
+                            {% if bann3.url_externa == 'sim' %}
+                                <a href="{{ bann3.url }}">
+                                    <img class="img-responsive" src="{{ bann3.banner.url }}" alt="">
+                                </a>
+                            {% else %}
+                                <a href="{{ bann3.get_absolute_url }}">
+                                    <img class="img-responsive" src="{{ bann3.banner.url }}" alt="">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <!-- End "adv block" -->
+                    </div>
+                    <!-- sidebar-widget-contnet -->
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!-- End "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <!-- Start "sidebar-widget" -->
+            <div class="sidebar-widget clrearfix wow fadeIn">
+                <div class="main-title clearfix">
+                    <h3 class="title border-b-dark-white">Serviços mais acessados<span class="border orange-bg"></span></h3>
+                </div>
+                <div class="sidebar-widget-contnet clrearfix">
+                    <ul class="list-sidebar">
+                        <li><a href="{% url 'licitacoes:modalidade_view' %}">Licitações</a></li>
+                        <li><a href="{% url 'transparencia:transparencia_view' %}">Portal Transparência</a></li>
+                        <li><a href="{% url 'administracao:administracao_cidadao' %}">IPTU/CERTIDÃO NEGATIVA/GUIAS</a></li>
+                        <li><a href="{% url 'concursos:tipo_concurso_view' %}">Concursos</a></li>
+                        <li><a href="{% url 'administracao:empresa' %}">Empresas</a></li>
+                        <li><a href="{% url 'leis:leis_view' %}">Leis Municipais</a></li>
+                        <li><a href="{% url 'localizacao:localizacao_view' %}">Telefones e Endereços</a></li>
+                        <li><a href="{% url 'ouvidoria:home' %}">Ouvidoria Municipal</a></li>
+                    </ul>
+                </div>
+                <!-- sidebar-widget-contnet -->
+            </div>
+            <!-- End "sidebar-widget" -->
+            <!-- Start "sidebar-widget" -->
+            <div class="sidebar-widget clrearfix wow fadeIn">
+                {% load thumbnail_maker %}
+                {% if galeria2 %}
+                    {% for ga2 in galeria2 %}
+                        <div class="main-title clearfix">
+                            <h3 class="title border-b-dark-white">{{ ga2.titulo }}<span class="border orange-bg"></span></h3>
+                        </div>
+                        <div class="sidebar-widget-contnet clrearfix">
+                            <div class="gallery-block-small image-block">
+                                {% for gal2 in ga2.imagens.all %}
+                                    <a class="gallery-small-image" href="{{ gal2.imagem.url }}" data-lightbox="imagens" data-title="{{ gal2.titulo }}">
+                                        {% usethumbnail gal2.imagem "thumbs" as im %}
+                                            <img src="{{ gal2.imagem.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                        {% endusethumbnail %}
+                                        <i class="fa fa-search-plus "></i>
+                                    </a>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- sidebar-widget-contnet -->
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <!-- End "sidebar-widget" -->
+</aside>
+<!-- / secondary col-xs-12 col-sm-4  hidden-xs -->
+<!-- End "aside sidebar" -->

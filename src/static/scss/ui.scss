@@ -1,0 +1,78 @@
+/*!
+- FILE CONTENTS  
+--- animate
+--- font-awesome
+--- lightbox
+--- ticker style "news bar"
+--- main
+--- top-bar
+--- news-bar
+--- logo and ADV
+--- navigation bar
+--- blocks
+--- post-view
+--- comments block
+--- side bar
+--- widgets
+--- sign in & sign out & register  
+--- author block
+--- footer
+--- common class
+*/
+
+@import 'bootstrap-sass-master/assets/stylesheets/bootstrap';
+@import 'animate';
+@import 'font-awesome.min';
+@import 'lightbox';
+@import 'ticker-style';
+@import 'main';
+@import 'top-bar';
+@import 'news-bar';
+@import 'logo-and-adv';
+@import 'navigation-bar';
+@import 'blocks';
+@import 'post-view';
+@import 'comments-block';
+@import 'side-bar';
+@import 'widgets';
+@import 'sign';
+@import 'author-block';
+@import 'footer';
+@import 'common-class';
+
+// **** - media Q ****
+
+
+// tablets, 767px and down
+
+@media (max-width:450px) {}
+
+
+// tablets, 767px and down
+
+@media (max-width:767px) {}
+
+
+// Small devices (tablets, 768px and up)
+
+@media (min-width:768px) {}
+
+
+// desktops, 991px and down
+
+@media (max-width:$screen-md-max) {}
+
+
+// Medium devices (desktops, 992px and up)
+
+@media (min-width:992px) {}
+
+
+// Large devices (large desktops, 1200px and up)
+
+@media (min-width:$screen-lg-min) {}
+
+
+// Large devices (large desktops, 1200px and down)
+
+@media (max-width: $screen-lg-min) {}

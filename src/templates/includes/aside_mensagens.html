@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<!-- Start "aside sidebar" -->
+<aside class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <div class="main-title clearfix">
+            <h3 class="title border-b-dark-white">Teste<span class="border orange-bg"></span></h3>
+        </div>
+        <div class="sidebar-widget-contnet clrearfix">
+            {% block aside_mensagens %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- End "sidebar-widget" -->
+</aside>
+<!-- End "aside sidebar" -->

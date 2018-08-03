@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<footer class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="footer-box clearfix">
+                <h3 class="footer-box-title">Acesso rápido</h3>
+                <ul class="list-half-block clearfix">
+                    <li><a href="{% url 'licitacoes:modalidade_view' %}">Licitações</a></li>
+                    <li><a href="{% url 'leis:leis_view' %}">Leis Municipais</a></li>
+                    <li><a href="{% url 'ouvidoria:home' %}">Ouvidoria</a></li>
+                    <li><a href="{% url 'administracao:administracao_cidadao' %}">Cidadão</a></li>
+                    <li><a href="{% url 'administracao:empresa' %}">Empresas</a></li>
+                    <li><a href="{% url 'transparencia:transparencia_view' %}">Portal Transparência</a></li>
+                    <li><a href="{% url 'acesso_informacao:acesso_informacao_url' %}">Lei de Acesso a Informação</a></li>
+                    <li><a href="{% url 'saude:saude_escala_list_view' %}">Escalas médicas</a></li>
+                    <li><a href="{% url 'localizacao:localizacao_view' %}">Telefones e endereços</a></li>
+                </ul>
+            </div>
+            <!-- / footer-box -->
+        </div>
+        <!-- / col-xs-12 col-sm-6 col-md-4 -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="footer-box clearfix">
+                <div class="twitters-twitt gallery-block">
+
+                </div>
+            </div>
+            <!-- / footer-box -->
+        </div>
+        <!-- / col-xs-12 col-sm-6 col-md-4 -->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="footer-box clearfix">
+                <h3 class="footer-box-title">Últimas notícias</h3>
+                {% if ultimas_noticias %}
+                    {% for ultimas in noticias_footer_1 %}
+                <!-- Start "image-link-block" -->
+                <div class="image-link-block footer-image-link-block clearfix">
+                    <a href="{{ ultimas.get_absolute_url }}">
+                        <div class="image-block" style="background-image:url({{ ultimas.imagem.url }});">
+                            <i class="fa fa-file-image-o"></i>
+                        </div>
+                    </a>
+                    <div class="linke-block">
+                        <div class="news-tag-text fuchsia">{{ ultimas.get_secretaria_display }}</div>
+                        <h3 class="title"><a href="{{ ultimas.get_absolute_url }}">{{ ultimas.titulo }}</a></h3>
+                    </div>
+                </div>
+                <!-- End "image-link-block footer-image-link-block" -->
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <!-- / footer-box -->
+        </div>
+        <!-- / col-xs-12 col-sm-6 col-md-4 -->
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="footer-bottom-block ">
+                <div class="row">
+                    <div class="col-xs-3">Prefeitura Municipal de Serrana</div>
+                    <div class="col-xs-9 footer-bottom-links">
+                        <a href="{% url 'administracao:administracao_view' %}">Administração</a>
+                        <a href="{% url 'educacao:educacao' %}">Educação</a>
+                        <a href="{% url 'esportes:esporte' %}">Cultura, Esporte e Turismo</a>
+                        <a href="{% url 'infraestrutura:infraestrutura' %}">Infraestrutura</a>
+                        <a href="{% url 'saude:saude_view' %}">Saúde</a>
+                        <a href="{% url 'social:social' %}">Social</a>
+                    </div>
+                </div>
+                <!-- / row -->
+            </div>
+            <!-- / footer-bottom-block -->
+        </div>
+        <!-- / col-xs-12 -->
+    </div>
+    <!-- / row -->
+</footer>
+<!-- End "footer" -->

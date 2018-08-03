@@ -1,0 +1,119 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "hot-posts" -->
+                <div class="col-xs-12 hot-posts">
+
+                </div>
+                <!-- / hot-posts -->
+                <!-- End "hot-posts" -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                <!-- container-fluid center-gray-block -->
+                                {% if noticia %}
+                                    <div class="container-fluid main-content">
+                                        <h1 class="title">{{ noticia.titulo }}</h1>
+                                        <div class="post-info margin-b-19">
+                                            <span><a href=""><i class="fa fa-clock-o"></i>{{ noticia.publicacao }}</a></span>
+                                        </div>
+                                        {% if noticia.imagem %}
+                                            <figure class="post-pic">
+                                                <img class="img-responsive" src="{{ noticia.imagem.url }}">
+                                            </figure>
+                                            {% if noticia.legenda %}
+                                                <figcaption class="wp-caption-text">{{ noticia.legenda }}</figcaption>
+                                            {% endif %}
+                                        {% endif %}
+                                        <br>
+                                        <div class="post-cont-type clearfix">
+                                            {{ noticia.conteudo|safe }}
+                                        </div>
+                                        <hr>
+                                        <div id="fb-root"></div>
+                                        <script>(function(d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=222180498160781";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script>
+                                        <div class="fb-like" data-href="http://www.serrana.sp.gov.br{{ noticia.get_absolute_url }}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                                    </div>
+                                {% endif %}
+
+                                {% if banner %}
+                                    <div class="container-fluid main-content">
+                                        <h1 class="title">{{ banner.titulo }}</h1>
+
+                                        <div class="description">
+                                            {{ banner.texto|safe }}
+                                        </div>
+                                        <hr>
+                                        <div id="fb-root"></div>
+                                        <script>(function(d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=222180498160781";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script>
+                                        <div class="fb-like" data-href="http://www.serrana.sp.gov.br{{ banner.get_absolute_url }}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                                    </div>
+                                {% endif %}
+                                {% load embed_video_tags %}
+
+                                {% if video_youtube %}
+                                    <div class="container-fluid main-content">
+                                        <h1 class="text-primary">{{ video_youtube.titulo }}</h1>
+                                        <div class="post-cont-type clearfix">
+                                            {% video video_youtube.embed '600x400' %}
+                                        </div>
+                                        Ver conteúdo no Youtube: <a href="{{ video_youtube.url }}" class="text-primary">{{ video_youtube.url }}</a>
+                                        <hr>
+                                        <div id="fb-root"></div>
+                                        <script>(function(d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=222180498160781";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script>
+                                        <div class="fb-like" data-href="http://www.serrana.sp.gov.br{{ video_youtube.get_absolute_url }}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

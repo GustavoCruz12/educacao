@@ -1,0 +1,100 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Notícias</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        {% if list_noticias %}
+                            {% for l_noticias in list_noticias %}
+                                <!-- Start "image-one-of-three-block image-one-of-three-block-small-image search-wiget" -->
+                                <div class="image-one-of-three-block image-one-of-three-block-small-image search-wiget margin-b-30 pull-left clearfix">
+                                    <div class="col-xs-12 col-md-5">
+                                        <a href="{{ l_noticias.get_absolute_url }}">
+                                            <div class="image-block" style="background-image:url({{ l_noticias.imagem.url }});">
+                                                <i class="fa fa-file-image-o"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-12 col-md-7">
+                                        <div class="clearfix">
+                                            <span class="news-tag-text text-primary pull-left">{{ l_noticias.get_secretaria_display }}</span>
+                                        </div>
+                                        <!-- / clearfix -->
+                                        <div class="clearfix">
+                                            <div class="linke-block">
+                                                <h3 class="title"><a href="{{ l_noticias.get_absolute_url }}">{{ l_noticias.titulo }}</a></h3>
+                                                <div class="description">
+                                                    <span><a href=""><i class="fa fa-clock-o"></i>{{ l_noticias.publicacao }}</a></span>
+                                                </div>
+                                                <div class="description">
+                                                    <p>{{ l_noticias.conteudo|truncatechars_html:150|safe }}</p>
+                                                    <div class="read-more orange-links margin-t-24">
+                                                        <a class="pull-right" href="{{ l_noticias.get_absolute_url }}">leia mais</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / clearfix -->
+                                    </div>
+                                    <!-- / col-xs-12 col-md-8 -->
+                                </div>
+                                <!-- / image-one-of-three-block margin-b-15 pull-left clearfix -->
+                                <!-- End "image-one-of-three-block image-one-of-three-block-small-image search-wiget" -->
+                            {% endfor %}
+                        {% endif %}
+                        {% if is_paginated %}
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                {% for i in paginator.page_range %}
+                                    {% if page_obj.number == i %}
+                                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                    {% else %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

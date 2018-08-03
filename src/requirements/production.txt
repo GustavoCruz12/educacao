@@ -1,0 +1,17 @@
+Django==1.10.6
+django-grappelli
+django-filebrowser
+psycopg2
+django-compressor
+pillow
+django-sortedm2m
+ipython
+imagekit
+django-thumbnail-maker
+-e git+https://github.com/mariocesar/sorl-thumbnail.git#egg=sorl-thumbnail
+django-simple-math-captcha
+django-simple-captcha
+django-floppyforms
+django-crispy-forms
+django-widget-tweaks
+django-embed-video

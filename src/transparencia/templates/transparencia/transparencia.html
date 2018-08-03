@@ -1,0 +1,75 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/servicos_icons/transparencia_50x50.png' %}" alt=""> Portal Transparência</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#sobre">Sobre o Portal Transparência</a></li>
+                                <li><a data-toggle="tab" href="#informacoes">Informações disponíveis</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="sobre" class="tab-pane fade in active">
+                                    <fieldset>
+                                        <legend><h3 class="text-info">Transparência na gestão municipal</h3></legend>
+                                        <div class="post-cont-type clearfix">
+                                            <h3 class="text-info">Sobre o portal transparência</h3>
+                                            {% include "transparencia/includes/transparencia_text.html" %}
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div id="informacoes" class="tab-pane fade">
+                                    <div class="list-group">
+                                        <h3 class="text-info">Informações disponíveis</h3>
+                                        <h5 class="list-group-item"><a href="http://e-gov.betha.com.br/transparencia/recursos.faces" class="text-primary">Prestaçãode contas públicas, receitas, despesas e pessoal</a></h5>
+                                        <h5 class="list-group-item"><a href="{%  url 'licitacoes:modalidade_view' %}" class="text-primary">Editais, resultados e contratos de licitações</a></h5>
+                                        <h5 class="list-group-item"><a href="#" class="text-primary">Estrutura Organizacional e Atribuições</a></h5>
+                                        <h5 class="list-group-item"><a href="{% url 'leis:leis_view' %}" class="text-primary">Leis, portarias e decretos</a></h5>
+                                        <h5 class="list-group-item"><a href="{% url 'acesso_informacao:acesso_informacao_url' %}" class="text-primary">Registrar, consultar, acompanhar, ver estatísticas - ACESSO A INFORMAÇÃO</a></h5>
+                                        <h5 class="list-group-item"><a href="{% url 'localizacao:localizacao_view' %}" class="text-primary">Telefones, endereços e Horário de Funcionamento</a></h5>
+                                        <h5 class="list-group-item"><a href="{% url 'saude:saude_escala_list_view' %}" class="text-primary">Unidades de Saúde e escalas médicas</a></h5>
+                                        <h5 class="list-group-item">
+                                            <a href="{% url 'saude:saude_medicamento_url' %}" class="text-primary">Medicamentos padronizados</a></h5>
+                                        <h5 class="list-group-item"><a href="{% url 'leis:ldo_loa_ppa_view' %}" class="text-primary">LOA/LDO/PPA</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+
+                    </div>
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

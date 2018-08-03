@@ -1,0 +1,43 @@
+/***** - news bar *****/
+
+.news-bar {
+    line-height: 39px;
+    background-color: $brand-dark-whiteFa;
+     .main-title {
+        color: $brand-orang;
+        font-size: 12px;
+        font-weight: bold;
+        padding-right: 25px;
+    }
+    .list-of-news {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+    .news-item {
+        font-size: 11px;
+        .news-time {
+            //color: $brand-orang;
+        }
+        a {
+            color: $brand-sec;
+        }
+    }
+    .controller {
+            line-height: 39px;
+        i {
+            font-size: 7px;
+            color: $brand-orang;
+            cursor: pointer;
+            display:inline-block;
+            float: left;
+                margin-top: 16px;
+            &.fa-rotate-180{
+                // margin-top: 15px;
+                margin-right: 10px;
+                // margin-top: -50px;
+            }
+        }
+    }
+}

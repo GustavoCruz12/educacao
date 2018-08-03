@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!-- Start "aside sidebar" -->
+<aside class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <div class="main-title clearfix">
+                <h3 class="title border-b-dark-white">Informações<span class="border blue-bg"></span></h3>
+            </div>
+            <div class="sidebar-widget-contnet clrearfix">
+                <ul class="list-sidebar">
+                    <li><a href="{% url 'serrana:dados' %}">Dados</a></li>
+                    <li><a href="{% url 'serrana:historia' %}">História</a></li>
+                    <li><a href="{% url 'serrana:hino' %}">Hino oficial</a></li>
+                     <li><a href="{% url 'serrana:hoje' %}">Serrana hoje</a></li>
+                    <li><a href="{% url 'contato:contato_view' %}">Contato</a></li>
+                </ul>
+            </div>
+            <!-- sidebar-widget-contnet -->
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <div class="main-title clearfix">
+                <h3 class="title border-b-dark-white">Links úteis<span class="border blue-bg"></span></h3>
+            </div>
+            <div class="sidebar-widget-contnet clrearfix">
+                <ul class="list-sidebar">
+                    <li><a href="https://pt.wikipedia.org/wiki/Serrana">Serrana na Wikipédia</a></li>
+                </ul>
+            </div>
+            <!-- sidebar-widget-contnet -->
+        </div>
+        <!-- End "sidebar-widget" -->
+    </div>
+</aside>
+<!-- / secondary col-xs-12 col-sm-4  hidden-xs -->
+<!-- End "aside sidebar" -->

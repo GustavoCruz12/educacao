@@ -1,0 +1,57 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2 class="title"><img src="{% static 'images/secretaria_educ/logo.png'%}">Localização e Telefones</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="blog-list">
+                            {% if educacao_localizacao_view %}
+
+                                    {% for local in educacao_localizacao_view %}
+
+                                        <table class="table table-striped">
+                                            <caption><h3 class="blue">{{ local.orgao }}</h3></caption>
+                                            <tr><td><strong>Endereço:</strong></td><td> {{ local.endereco }}</td></tr>
+                                            <tr><td><strong>Bairro: </strong></td><td>{{ local.bairro }}</td></tr>
+                                            <tr><td><strong>Telefone(s): </strong></td><td>{{ local.telefone }}</td></tr>
+                                            <tr><td><strong>Horário de funcionamento: </strong></td><td>{{ local.horario }}</td></tr>
+                                        </table>
+                                    {% endfor %}
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_educacao.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

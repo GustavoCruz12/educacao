@@ -1,0 +1,667 @@
+/***** - common class's *****/
+
+.google-plus {
+    color: #DD4B39;
+}
+
+.twitter {
+    color: #00ACED;
+}
+
+.instagram {
+    color: #9B6954;
+}
+
+.facebook {
+    color: #3B5998;
+}
+
+.youtube {
+    color: #BB0000;
+}
+
+.vimeo {
+    color: #35C6EA;
+}
+
+.dribbble {
+    color: #F7659C;
+}
+
+.google-plus-hover {
+    &:hover {
+        color: #DD4B39;
+    }
+}
+
+.twitter-hover {
+    &:hover {
+        color: #00ACED;
+    }
+}
+
+.instagram-hover {
+    &:hover {
+        color: #9B6954;
+    }
+}
+
+.facebook-hover {
+    &:hover {
+        color: #3B5998;
+    }
+}
+
+.youtube-hover {
+    &:hover {
+        color: #BB0000;
+    }
+}
+
+.vimeo-hover {
+    &:hover {
+        color: #35C6EA;
+    }
+}
+
+.dribbble-hover {
+    &:hover {
+        color: #F7659C;
+    }
+}
+
+.google-plus-bg {
+    background: #DD4B39;
+}
+
+.twitter-bg {
+    background: #00ACED
+}
+
+.instagram-bg {
+    background: #9B6954
+}
+
+.whatsapp-bg {
+    background: #4DC247
+}
+
+.facebook-bg {
+    background: #3B5998
+}
+
+.youtube-bg {
+    background: #BB0000;
+}
+
+.vimeo-bg {
+    background: #35C6EA;
+}
+
+.dribbble-bg {
+    background: #F7659C;
+}
+
+.tooltip-inner {
+    background-color: $brand-sec;
+    border-radius: 1px;
+}
+
+.yellow-links a {
+    color: $brand-yello
+}
+
+.yellow-links a:hover {
+    color: $brand-yello-hover
+}
+
+.fuchsia-links a {
+    color: $brand-fuchsia
+}
+
+.fuchsia-links a:hover {
+    color: $brand-fuchsia-hover
+}
+
+.blue-links a {
+    color: $brand-blue
+}
+
+.blue-links a:hover {
+    color: $brand-blue-hover
+}
+
+.green-links a {
+    color: $brand-green;
+}
+
+.green-links a:hover {
+    color: $brand-green-hover;
+}
+
+.red-links a {
+    color: $brand-red
+}
+
+.red-links a:hover {
+    color: $brand-red-hover
+}
+
+.orange-links a {
+    color: $brand-orang
+}
+
+.orange-links a:hover {
+    color: $brand-orang-hover
+}
+
+.tooltip.top .tooltip-arrow,
+.tooltip.top-left .tooltip-arrow,
+.tooltip.top-right .tooltip-arrow,
+.tooltip.right .tooltip-arrow,
+.tooltip.left .tooltip-arrow,
+.tooltip.bottom .tooltip-arrow,
+.tooltip.bottom-left .tooltip-arrow,
+.tooltip.bottom-right .tooltip-arrow {
+    border-bottom-color: $brand-sec;
+    color: $brand-white;
+}
+
+.yellow {
+    color: $brand-yello;
+}
+
+.blue {
+    color: $brand-blue;
+}
+
+.green {
+    color: $brand-green;
+}
+
+.red {
+    color: $brand-red;
+}
+
+.orange {
+    color: $brand-orang;
+}
+
+.bright-orange {
+    color: $brand-bright-orange;
+}
+
+.fuchsia {
+    color: $brand-fuchsia;
+}
+
+.yellow-bg {
+    background: $brand-yello;
+}
+
+.blue-bg {
+    background: $brand-blue;
+}
+
+.green-bg {
+    background: $brand-green;
+}
+
+.red-bg {
+    background: $brand-red;
+}
+
+.orange-bg {
+    background: $brand-orang;
+}
+
+.bright-orange-bg {
+    background: $brand-bright-orange;
+}
+
+.fuchsia-bg {
+    background: $brand-fuchsia;
+}
+
+.background-f3 {
+    background: $brand-gray-f3;
+}
+
+.border-b-dark-white {
+    border-bottom: 1px solid $brand-dark-white;
+}
+
+.dropdown-menu {
+    background: $brand-dark-whiteFa;
+    border: 1px solid #E2E2E2;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    & > li > a{
+        color:$brand-black;
+    }
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: $brand-dark-whiteFa;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    filter: none;
+    background-repeat: repeat-x;
+}
+
+#spinner {
+    font-size: 80px;
+    color: $brand-sec;
+    text-align: center;
+    margin-top: 15px;
+}
+
+input {
+    @include transition(all .5s);
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 1px solid $brand-dark-white;
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    background: $brand-dark-whiteFa;
+    color: $brand-sec;
+    padding: 10px 20px;
+    &::-webkit-input-placeholder {
+        color: $brand-sec;
+    }
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        color: $brand-sec;
+    }
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $brand-sec;
+    }
+    &:-ms-input-placeholder {
+        color: $brand-sec;
+    }
+}
+
+textarea {
+    height: auto;
+    line-height: 25px;
+}
+
+input[type="submit"],
+.main-btn {
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: $brand-orang;
+    color: $brand-white-dark-light;
+    padding: 0 30px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    &:hover {
+        background: $brand-orang-hover;
+    }
+}
+
+.small-btn {
+    @extend .main-btn;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.relative {
+    position: relative
+}
+
+.ptn {
+    border-radius: 0;
+    border: none;
+}
+
+.width-100p {
+    width: 100%;
+    @include clearfix;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-15 {
+    font-size: 15px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-17 {
+    font-size: 17px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+.font-size-22 {
+    font-size: 22px;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}
+
+.font-size-26 {
+    font-size: 26px;
+}
+
+.no-float {
+    float: none;
+}
+
+.margin-t-0 {
+    margin-top: 0px;
+}
+
+.margin-t-10 {
+    margin-top: 10px;
+}
+
+.margin-t-8 {
+    margin-top: 8px;
+}
+
+.margin-t-20 {
+    margin-top: 20px;
+}
+
+.margin-t-24 {
+    margin-top: 24px;
+}
+
+.margin-t-30 {
+    margin-top: 30px;
+}
+
+.margin-t-40 {
+    margin-top: 40px;
+}
+
+.margin-t-50 {
+    margin-top: 50px;
+}
+
+.margin-t-60 {
+    margin-top: 60px;
+}
+
+.margin-t-70 {
+    margin-top: 70px;
+}
+
+.margin-t-80 {
+    margin-top: 80px;
+}
+
+.margin-t-90 {
+    margin-top: 90px;
+}
+
+.margin-t-100 {
+    margin-top: 100px;
+}
+
+.margin-b-10 {
+    margin-bottom: 10px;
+}
+
+.margin-b-15 {
+    margin-bottom: 15px;
+}
+
+.margin-b-16 {
+    margin-bottom: 16px;
+}
+
+.margin-b-18 {
+    margin-bottom: 18px;
+}
+
+.margin-b-19 {
+    margin-bottom: 19px;
+}
+
+.margin-b-20 {
+    margin-bottom: 20px;
+}
+
+.margin-b-30 {
+    margin-bottom: 30px;
+}
+
+.margin-b-32 {
+    margin-bottom: 32px;
+}
+
+.margin-b-40 {
+    margin-bottom: 40px;
+}
+
+.margin-b-50 {
+    margin-bottom: 50px;
+}
+
+.margin-b-60 {
+    margin-bottom: 60px;
+}
+
+.margin-b-70 {
+    margin-bottom: 70px;
+}
+
+.margin-b-80 {
+    margin-bottom: 80px;
+}
+
+.margin-b-80-important {
+    margin-bottom: 80px;
+}
+
+.margin-b-90 {
+    margin-bottom: 90px;
+}
+
+.margin-t-100 {
+    margin-top: 100px;
+}
+
+.margin-l-10 {
+    margin-left: 10px;
+}
+
+.padding-b-0 {
+    padding-bottom: 0px;
+}
+
+.padding-b-10 {
+    padding-bottom: 10px;
+}
+
+// .title {
+//     word-wrap: break-word;
+// }
+.separator-line-solid {
+    border: 1px solid #F1F1F2;
+    height: 1px;
+    width: 100%;
+    padding: 0px;
+    margin: 30px auto;
+    float: left;
+}
+
+.load-more {
+    border-radius: 30px;
+    height: 50px;
+    //line-height: 50px;
+    border: 1px solid #EBECED;
+    background: #F6F6F6;
+    padding: 10px 30px;
+    margin-bottom: 15px;
+    display: inline-block;
+    @include transition(all .5s);
+    &:hover {
+        background: $brand-white;
+    }
+}
+
+.load-more-yellow {
+    @include transition(all .5s);
+    background: $brand-yello;
+    text-align: center;
+    width: 100%;
+    float: left;
+    color: white;
+    font-size: 15px;
+    line-height: 60px;
+    height: 60px;
+    text-transform: uppercase;
+    padding-top: 13px;
+    &:hover {
+        color: white;
+        background: $brand-yello-hover;
+    }
+    i {
+        margin: 0 10px;
+    }
+}
+
+.list-horizontal {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-left: -10px;
+    li {
+        display: inline-block;
+        position: relative;
+        //margin-right: 14px;
+        a {
+            color: $brand-sec;
+            display: block;
+            padding: 0 12.5px;
+        }
+        &:first-child a {
+            padding: 0 12.5px 0 10px;
+            // color: red;
+        }
+        & > ul {
+            position: absolute;
+            // top:0;
+            left: 0;
+            background: $brand-white;
+            z-index: 10;
+            margin: 0;
+            padding: 0;
+            display: none;
+            li {
+                display: block;
+                a:first-child {
+                    display: block;
+                    padding: 10px 20px;
+                    line-height: 20px;
+                    &:hover {
+                        background: $brand-dark-white;
+                    }
+                }
+            }
+        }
+        &:hover > ul {
+            display: block;
+            // @extend .animate;
+            // @extend .fadeIn;
+        }
+    }
+}
+
+.width-80p {
+    width: 80%;
+}
+
+.center-block {
+    margin: 0 auto;
+}
+
+.overflow-hidden {
+    overflow: hidden
+}
+
+.blur {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.tag-cloud {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 30px;
+    @include transition(all .5s);
+    &:hover {
+        background: $brand-orang;
+        color: $brand-white;
+    }
+}
+
+.boxed-style {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.margin-b-widget {
+    margin-bottom: 60px;
+    // border: 1px solid yellow;
+}
+.margin-b-widget-inner-pages {
+    margin-bottom:40px;
+    // border: 1px solid yellow;
+    // background: rgba(255, 0, 0, 0.4);
+}
+
+.one-col-of-tow {
+    
+    // @media (max-width: $screen-sm-max) {
+        // background: red;
+        margin-bottom: 30px;
+        // &:last-child {
+        //     margin-bottom: 0px;
+        //     background: green;
+        // }
+    // }
+}
+
+.widget-full-row {
+    @extend .clearfix;
+    margin-bottom: 20px;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}

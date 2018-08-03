@@ -1,0 +1,92 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/galerias/botao-galeria.png' %}"> Galerias de imagens</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <br>
+                        {% if list_galerias %}
+                            {% for l_galerias in list_galerias %}
+                                <div class="col-xs-12 col-sm-4">
+                                    <!-- Start "post-review" -->
+                                    <div class="post-review margin-b-widget-inner-pages">
+                                        <div class="progress-bar-review">
+                                            <div class="row">
+                                                <div class="text-center" >
+                                                    <h5><a href="{{ l_galerias.get_absolute_url }}" class="text-primary">{{ l_galerias.titulo }}</a></h5>
+                                                    {% load thumbnail_maker %}
+
+                                                    <figure>{% for l in l_galerias.imagens.all %}
+                                                        {% usethumbnail l.imagem "galerias" as im %}
+                                                            {% if forloop.first %}<a href="{{ l_galerias.get_absolute_url }}"><img src="{{ l.imagem.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>{% endif %}
+                                                        {% endusethumbnail %}
+                                                    {% endfor %}
+                                                    </figure>
+
+                                                    <p class="post-cont-type">{{ l_galerias.get_secretaria_display }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / progress-bar-review -->
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="alert-warning">
+                                <h3>Não existem galerias disponíveis!</h3></div>
+                        {% endif %}
+
+                    </div>
+                    {% if is_paginated %}
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                            {% else %}
+                                <li class="disabled"><span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in paginator.page_range %}
+                                {% if page_obj.number == i %}
+                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                            {% else %}
+                                <li class="disabled"><span>&raquo;</span></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

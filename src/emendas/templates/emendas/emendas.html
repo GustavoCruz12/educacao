@@ -1,0 +1,136 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+{% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+{% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+<div class="container-fluid main-content">
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- Start "main" -->
+            <main class="main col-xs-12 col-sm-8">
+                <!-- row -->
+                <div class="row">
+                    <div class="row wow styleing-breadcrumb fadeInUp">
+                        <div class="col-xs-12">
+                            <h2>Emendas Parlamentares e Recursos conquistados</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="blog-list blog-post wow fadeInUp">
+                            <!-- row -->
+                            <div class="row">
+                                {% if emendas %}
+                                {% for emenda in emendas %}
+                                <!-- Start "image-one-of-three-block image-one-of-three-block-small-image search-wiget" -->
+                                <div class="image-one-of-three-block image-one-of-three-block-small-image search-wiget margin-b-30 pull-left clearfix">
+                                    <div class="col-xs-12 col-md-5">
+                                        <a href="{{ emenda.get_absolute_url }}">
+                                            <div class="image-block" style="background-image:url({{ emenda.foto.url }});">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-12 col-md-7">
+                                        <!-- / clearfix -->
+                                        <div class="clearfix">
+                                            <div class="linke-block">
+                                                <h3 class="text-primary"><a href="{{ emenda.get_absolute_url }}">{{ emenda.deputado }}</a></h3>
+                                                <div class="post-info">
+
+                                                </div>
+                                                <div class="description">
+                                                    <p>{{ emenda.conteudo|truncatechars_html:150|safe }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / clearfix -->
+                                    </div>
+                                    <!-- / col-xs-12 col-md-8 -->
+                                </div>
+                                <!-- / image-one-of-three-block margin-b-15 pull-left clearfix -->
+                                <!-- End "image-one-of-three-block image-one-of-three-block-small-image search-wiget" -->
+                                {% endfor %}
+                                {% endif %}
+                                {% if is_paginated %}
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                                    {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in paginator.page_range %}
+                                    {% if page_obj.number == i %}
+                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                    {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                    {% endif %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- End "main" -->
+            {% include "home/includes/aside_home.html" %}
+        </div>
+        <!-- row -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / container-fluid main-content-->
+<div class="container-fluid center-gray-block">
+    <div class="container">
+        <div class="row">
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</div>
+<!-- container-fluid center-gray-block -->
+<div class="container-fluid main-content">
+    <div class="container">
+    </div>
+    <!-- / container -->
+</div>
+<!-- /container-fluid -->
+<div class="container-fluid center-gray-block padding-b-10">
+    <div class="container">
+        <div class="row">
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</div>
+<!-- container-fluid center-gray-block -->
+<div class="container-fluid main-content">
+    <!-- Start "adv block" -->
+    <div class="adv-blcok-two col-xs-12 clearfix">
+        <a href="#">
+            <img class="img-responsive" src="{% static "test-images/adv.jpg"%}" alt="">
+        </a>
+    </div>
+    <!-- End "adv block" -->
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
+

@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!-- Start "news-bar" -->
+<div class="news-bar container-fluid">
+    <div class="container">
+        <!-- <span class="main-title">BREAKING NEWS</span> -->
+        <ul id="js-news" class="list-of-news js-hidden">
+            {% if ultimas_noticias %}
+                {% for ult_noticias in ultimas_noticias %}
+                    <li class="news-item"><a href="{{ ult_noticias.get_absolute_url }}">{{ ult_noticias.titulo }}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    <!-- / container -->
+</div>
+<!-- / news-bar container-fluid-->
+<!-- End "news-bar" -->
+<!-- Start "logo-adv-bar" -->
+<div class="container-fluid logo-adv-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <div data-color="#E7E8E9" class="logo">
+                    <a href="/">
+                        <img class="img-responsive" src="{% static "images/logo.jpg" %}" alt="">
+                    </a>
+                </div>
+                <!-- / logo -->
+            </div>
+            <!-- / col-md-3 col-xs-12-->
+            {% if banner_principal %}
+
+                <div class="col-md-8 col-xs-12">
+                    {% if banner_principal %}
+                        {% for bann1 in banner_principal %}
+                            {% if bann1.url_externa == 'sim' %}
+                                <a href="{{ bann1.url }}">
+                                    <img class="img-responsive" src="{{ bann1.banner.url }}" alt="">
+                                </a>
+                            {% else %}
+                                <a href="{{ bann1.get_absolute_url }}">
+                                    <img class="img-responsive" src="{{ bann1.banner.url }}" alt="">
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            {% endif %}
+            <!-- / col-md-9 col-xs-12 -->
+        </div>
+        <!-- / row -->
+    </div>
+    <!-- / container -->
+</div>
+<!-- / container-fluid logo-adv-bar -->
+<!-- End "logo-adv-bar" -->

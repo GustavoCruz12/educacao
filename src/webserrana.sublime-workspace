@@ -1,0 +1,711 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Cri",
+				"CriancaListSearch\tclass"
+			],
+			[
+				"ver",
+				"verbose_name_plural"
+			],
+			[
+				"MED",
+				"MEDIA_URL"
+			],
+			[
+				"diario",
+				"texto_arquivo_diario"
+			],
+			[
+				"post",
+				"post_save\tstatement"
+			],
+			[
+				"template_",
+				"template_name\tstatement"
+			],
+			[
+				"Solicita",
+				"SolicitacaoAtendida\tclass"
+			],
+			[
+				"Soli",
+				"SolicitacaoAtendida\tclass"
+			],
+			[
+				"So",
+				"SolicitacaoVaga\tclass"
+			],
+			[
+				"Date",
+				"DateTimeField\tclass"
+			],
+			[
+				"Di",
+				"DiarioOficialExtraArquivos\tclass"
+			],
+			[
+				"CHOI",
+				"CHOICES_TIPO\tstatement"
+			],
+			[
+				"Diario",
+				"DiarioOficialExtra\tclass"
+			],
+			[
+				"Dia",
+				"DiarioOficialExtra\tclass"
+			],
+			[
+				"Diar",
+				"DiarioOficialExtra\tclass"
+			],
+			[
+				"Select2Multiple",
+				"Select2MultipleWidget"
+			],
+			[
+				"Select",
+				"Select2MultipleWidget"
+			],
+			[
+				"Model",
+				"ModelMultipleChoiceField"
+			],
+			[
+				"Endere",
+				"EnderecoCrianca\tclass"
+			],
+			[
+				"Sele",
+				"Select2Multiple\tclass"
+			],
+			[
+				"eas",
+				"easy_select2\tmodule"
+			],
+			[
+				"Ende",
+				"EnderecoCrianca\tclass"
+			],
+			[
+				"S",
+				"StackedInline\tclass"
+			],
+			[
+				"a",
+				"apply_select2\tfunction"
+			],
+			[
+				"rg",
+				"rg_responsavel"
+			],
+			[
+				"Man",
+				"ManyToManyField\tclass"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"abertas",
+				"abertas_hoje"
+			],
+			[
+				"agen",
+				"agenda_compartilhada_ativa\tfunction"
+			],
+			[
+				"col-sm",
+				"col-sm-12 \tBootstrap 3 Class"
+			],
+			[
+				"De",
+				"DeptoSetor\t(orgaos.py)"
+			],
+			[
+				"TipoOr",
+				"TipoOrgao"
+			],
+			[
+				"Dep",
+				"DeptoSetor"
+			],
+			[
+				"Or",
+				"Orgao\t(orgaos.py)"
+			],
+			[
+				"verbose_",
+				"verbose_name_plural"
+			],
+			[
+				"de",
+				"depto_setor\tstatement"
+			],
+			[
+				"OrgaoMu",
+				"OrgaoMunicipal\t(orgaos.py)"
+			],
+			[
+				"Secre",
+				"SecretariaMunicipal\t(orgaos.py)"
+			],
+			[
+				"Org",
+				"Orgao\tclass"
+			],
+			[
+				"org",
+				"orgaos\tmodule"
+			],
+			[
+				"age",
+				"agenda_administrativa"
+			],
+			[
+				"Pau",
+				"PautaForm"
+			],
+			[
+				"Agen",
+				"AgendaPauta"
+			],
+			[
+				"cl",
+				"class\tclass …"
+			],
+			[
+				"anex",
+				"anexo_create"
+			],
+			[
+				"anexo",
+				"anexo_create\t(views.py)"
+			],
+			[
+				"ge",
+				"generic"
+			],
+			[
+				"btn-",
+				"btn-xs \tBootstrap 3 Class"
+			],
+			[
+				"offset",
+				"col-xs-offset-4 \tBootstrap 3 Class"
+			],
+			[
+				"data",
+				"data-url"
+			],
+			[
+				"movimenta",
+				"movimentacoes"
+			],
+			[
+				"movi",
+				"movimentacoes"
+			],
+			[
+				"col-s",
+				"col-sm-6 \tBootstrap 3 Class"
+			],
+			[
+				"Movie",
+				"MovimentacaoPauta"
+			],
+			[
+				"Movi",
+				"MovimentacaoPautaForm"
+			],
+			[
+				"moda",
+				"modal-movimentacao\t(agenda_pautas_detail.html)"
+			],
+			[
+				"agenda_",
+				"agenda_administrativa\t(views.py)"
+			],
+			[
+				"Mov",
+				"MovimentacaoPautaForm"
+			],
+			[
+				"con",
+				"contrib"
+			],
+			[
+				"u",
+				"usuario"
+			],
+			[
+				"Movim",
+				"MovimentacaoPautaCreate"
+			],
+			[
+				"pa",
+				"pauta.pk\t(agenda_pautas_detail.html)"
+			],
+			[
+				"Mo",
+				"MovimentacaoPautaForm"
+			],
+			[
+				"form_",
+				"form_class"
+			],
+			[
+				"django",
+				"django_ajax\tmodule"
+			],
+			[
+				"aut",
+				"auto_now"
+			],
+			[
+				"dt",
+				"dt_publicacao\t(models.py)"
+			],
+			[
+				"Prin",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"impor",
+				"import\timport (...) ʂ"
+			],
+			[
+				"obj",
+				"objects\tstatement"
+			],
+			[
+				"Agenda",
+				"AgendaAdministrativa"
+			],
+			[
+				"pauta_",
+				"pauta_detail"
+			],
+			[
+				"tempo",
+				"tempo_restante_agenda"
+			],
+			[
+				"get_",
+				"get_object_or_404"
+			],
+			[
+				"dt_",
+				"dt_previsao_fim_agenda"
+			],
+			[
+				"priori",
+				"prioridade_alta"
+			],
+			[
+				"pri",
+				"prioridade_media"
+			],
+			[
+				"prio",
+				"prioridade_alta"
+			],
+			[
+				"P",
+				"Println\tn int, err error ƒ"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Cross-Compile (Interactive)"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/GoSublime/GoSublime.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Golang Build/Go.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 605.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/william/.virtualenvs/env_webserrana/src"
+	],
+	"file_history":
+	[
+		"/home/william/.virtualenvs/env_webserrana/src/serrana/urls.py",
+		"/home/william/.virtualenvs/env_webserrana/src/crianca/admin.py",
+		"/home/william/.virtualenvs/env_webserrana/src/crianca/templates/crianca/base.html",
+		"/home/william/.virtualenvs/env_webserrana/src/crianca/urls.py",
+		"/home/william/.virtualenvs/env_webserrana/src/crianca/models.py",
+		"/home/william/.virtualenvs/env_webserrana/src/serrana/settings.py",
+		"/home/william/.virtualenvs/env_webserrana/src/crianca/templates/crianca/basesearch.html",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/templates/diario_oficial/diario_oficial.html",
+		"/home/william/.virtualenvs/env_webserrana/src/educacao_vagas/models.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/signals.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/views.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/__init__.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/models.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/apps.py",
+		"/home/william/.virtualenvs/env_webserrana/src/geolocalizacao/views.py",
+		"/home/william/.virtualenvs/env_webserrana/src/geolocalizacao/urls.py",
+		"/home/william/.virtualenvs/env_webserrana/src/geolocalizacao/templates/geolocalizacao/index.html",
+		"/home/william/.virtualenvs/env_webserrana/src/emendas/templates/emendas/emendas.html",
+		"/home/william/.virtualenvs/env_webserrana/src/secretaria_administracao/templates/administracao/cidadao/cidadao.html",
+		"/home/william/.virtualenvs/env_webserrana/src/educacao_vagas/admin.py",
+		"/home/william/.virtualenvs/env_webserrana/src/home/templates/home/includes/aside_home.html",
+		"/home/william/.virtualenvs/env_webserrana/src/templates/includes/topbar.html",
+		"/home/william/.virtualenvs/env_webserrana/src/templates/includes/navigation_bar.html",
+		"/home/william/.virtualenvs/env_webserrana/src/leis/urls.py",
+		"/home/william/go/src/github.com/williamfirmino/go-bootcamp/01/collections.go",
+		"/home/william/.virtualenvs/env_webserrana/src/leis/views.py",
+		"/home/william/.virtualenvs/env_webserrana/src/home/models.py",
+		"/home/william/.virtualenvs/env_webserrana/src/transparencia/templates/transparencia/transparencia.html",
+		"/home/william/.virtualenvs/env_webserrana/src/leis/templates/leis/ppa_ldo_loa.html",
+		"/home/william/.virtualenvs/env_webserrana/src/secretaria_saude/models.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/admin.py",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/templates/diario_oficial/busca_diario_oficial.html",
+		"/home/william/.virtualenvs/env_webserrana/src/leis/templates/leis/leis.html",
+		"/home/william/go/src/github.com/williamfirmino/educacao/01/main.go",
+		"/home/william/.virtualenvs/env_webserrana/src/educacao_vagas/forms.py",
+		"/home/william/.virtualenvs/env_webserrana/src/webserrana.sublime-project",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/transforma_pdf_para_txt.py",
+		"/home/william/.config/sublime-text-3/Packages/User/GoSublime.sublime-settings",
+		"/home/william/.config/sublime-text-3/Packages/GoSublime/CHANGELOG.md",
+		"/home/william/.virtualenvs/env_webserrana/src/diario_oficial/utils.py",
+		"/home/william/Projetos/Python/backup_firebird.py",
+		"/home/william/Projetos/SQL/consulta_funcionario.sql",
+		"/home/william/.virtualenvs/env_python-3.6.5/Projects/Algorithms/matriz_diagonal_dominante.py",
+		"/home/william/.virtualenvs/env_webserrana/src/secretaria_saude/templates/saude/secretaria/secretario.html",
+		"/home/william/.virtualenvs/env_webserrana/src/secretaria_educacao/templates/educacao/secretaria/secretario.html",
+		"/home/william/.virtualenvs/env_webserrana/src/gabinete/views.py",
+		"/home/william/.virtualenvs/env_webserrana/src/requirements_freeze.txt",
+		"/home/william/.bashrc",
+		"/home/william/.virtualenvs/env_webserrana/src/consulta_publica/models.py",
+		"/home/william/.zshrc",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/pages/home2.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/models/agenda.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/config/urls.py",
+		"/home/william/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/pages/home.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/views/agenda.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/includes/leftside.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/untitled.sublime-project",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/models/__init__.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/admin.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/includes/topbar.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/includes/head.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/home/index.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/models/orgaos.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/includes/javascript.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/404.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/500.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/templates/includes/title-sidebar.html",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/static/css/style-unminify.css",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/static/css/style.css",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/views/__init__.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/views/home.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda/ciep/models/pessoas.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/agenda.sublime-project",
+		"/home/william/.virtualenvs/env_administracao/agenda/config/settings/base.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/config/settings/local.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/ciep/models/pessoas.py",
+		"/home/william/.virtualenvs/env_administracao/agenda/ciep/views/__init__.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/views.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/urls.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/anexos_agenda.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/models.py",
+		"/home/william/Projects/teste.ts",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_detail2.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/forms.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/admin.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_pautas_detail2.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_pautas2.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/templates/includes/datatable_js.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_list.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/templates/base.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/.vscode/tags",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/static/js/movimentacao_create.js",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda_tipo/agenda_tipo_create.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_create_form.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/settings/base.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_detail.html",
+		"/home/william/Projects/Go/teste/go_molecular_metalloids.go",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/agenda_pautas_detail.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/static/css/pauta.css",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda.sublime-project",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/partials/partial_movimentacao_create.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/requirements/base.txt",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/partials/partial_movimentacao_update.html",
+		"/home/william/Projects/Go/teste/teste.go",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/mixins.py",
+		"/home/william/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/partials/partial_movimentacao_form.html",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/templates/agenda/views2.py",
+		"/home/william/.virtualenvs/env_agenda/agenda/agenda/apps/atividades/views2.py",
+		"/home/william/Projects/Go/teste/array_go_1.go",
+		"/home/william/.config/sublime-text-3/Packages/HTMLBeautify/HTMLBeautify.sublime-settings",
+		"/home/william/.config/sublime-text-3/Packages/User/HTMLBeautify.sublime-settings",
+		"/home/william/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/william/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 41.9346680717
+	},
+	"find_in_files":
+	{
+		"height": 116.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"crianca.modalidade",
+			"atendidas",
+			"informações",
+			"contrib",
+			"{{ MEDIA_URL }}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"crianca.get_modalidade_display",
+			"{{ MEDIA_ROOT }}"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.612223393
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///home/william/go/src/github.com/williamfirmino/educacao/01":
+	{
+		"height": 120.96522522
+	},
+	"output.9o:///home/william/go/src/github.com/williamfirmino/go-bootcamp/01":
+	{
+		"height": 132.556381226
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 168.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 121.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.golang_build":
+	{
+		"height": 168.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "webserrana.sublime-project",
+	"replace":
+	{
+		"height": 75.6543730242
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"leis",
+				"leis/templates/leis/leis.html"
+			],
+			[
+				"educacao_vagas/admin",
+				"educacao_vagas/admin.py"
+			],
+			[
+				"educacao_vagas/mod",
+				"educacao_vagas/models.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 230.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

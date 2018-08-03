@@ -1,0 +1,97 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                {% for con in concurso %}
+                                    {% if forloop.first %}
+                                        <h3><strong>{{ con.tipo }} - {{ con.ano }}</strong></h3>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% if concurso %}
+                                <!-- Table -->
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Descrição</th>
+                                        <th>Numero</th>
+                                        <th>Ano</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for con in concurso %}
+                                        <tr>
+                                            <td><a href="{% url 'concursos:concurso_detalhe_view' con.pk %}" class="text-primary">{{ con.descricao }}</a></td>
+                                            <td>{{ con.numero }}</td>
+                                            <td>{{ con.ano }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                                <!-- End Table -->
+                            {% else %}
+                                <div class="alert alert-warning" role="alert">
+                                <h5>Escolha uma modalidade para exibir as informações.</h5>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+    <div class="container">
+        <div class="row">
+            <hr>
+            <div class="container-fluid main-content">
+                <div class="description text-success">
+                    A Prefeitura de Serrana reservou este espaço para manter você
+                    atualizado de acordo com as publicações relativas aos concursos
+                    e processos seletivos de nossa cidade.<br />
+                    <br />
+                    <i>Utilize os filtros para visualizar os arquivos que deseja</i><br />
+                    <hr>
+                    <br /><br />
+                    Para mais informações entrar em contato no Recursos Humanos.<br />
+                    <p class="blog-post">
+                        <strong>
+                            Rua: Dr. Tancredo de Almeida Neves, 176<br />
+                            CEP: 14150-000<br />
+                            Telefone: 3987-9878 / 3987-9848
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

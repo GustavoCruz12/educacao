@@ -1,0 +1,88 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Ouvidoria Municipal</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/ouvidoria/ouvidoria.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    A Ouvidoria Municipal foi criada pela Lei nº 1.066/2004, é um elo de comunicação entre os munícipes e a Administração Pública Municipal. Recebe reclamações, denúncias, solicitações e sugestões e as encaminha ao setor da Prefeitura responsável, bem como ao Prefeito e Secretários Municipais.
+                                </p>
+                                <p class="text-justify">
+                                    Acompanha o desenrolar dos problemas, com todo o sigilo e dedicação inerentes, e cobra sua solução. Em assuntos tais como: irregularidade, deficiência do serviço público, abuso de autoridade praticada por integrante da Administração Municipal, sugestões de melhoria dos serviços, e outros que a população observe e anseie.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type margin-b-widget clearfix">
+                        <fieldset>
+                            <legend><h3 class="text-primary">Tipos de atendimento:</h3></legend>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><strong>DENÚNCIAS:</strong> fatos graves contrários às leis municipais vigentes;</li>
+                                <li class="list-inline-item"><strong>SOLICITAÇÕES:</strong> pedidos de serviços e de atendimentos;</li>
+                                <li class="list-inline-item"><strong>SUGESTÕES:</strong> para serem adotadas em qualquer setor da Prefeitura;</li>
+                                <li class="list-inline-item"><strong>RECLAMAÇÕES:</strong> quando solicitações feitas anteriormente aos diversos setores da PMS não forem atendidas.</li>
+                                <li class="list-inline-item"><strong>ELOGIOS:</strong> quando apresentar satisfação dos serviços da Prefeitura.</li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "ouvidoria/includes/aside_mensagens_ouvidoria.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid center-gray-block">
+                <div class="sidebar-widget-contnet clrearfix">
+                    <div class="alert-info text-center">
+                        O atendimento feito pela Ouvidoria é gratuito e as reivindicações poderão ser formuladas por site, email, telefone e presencialmente:
+                        E-MAIL: ouvidoria@ <span style="display: none" >null</span> serrana.sp.gov.br, atendimento presencial no horário de atendimento da PMS de segunda a sexta feira, ou pelo Telefone: 3987-9890 da Ouvidoria Municipal.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

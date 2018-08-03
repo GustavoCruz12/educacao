@@ -1,0 +1,158 @@
+{% extends "base_home.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/diario_oficial/diario-oficial.png' %}"> Diário Oficial</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="blog-list blog-post wow fadeInUp">
+                            {% if hoje %}
+                                {% for h in hoje %}
+                                    <div class="alert alert-info">
+                                        {% if h.tipo == 1 %}
+                                            <a href="{{ h.arquivo.url }}" class="blue"><h3> Diário oficial do dia</h3></a>
+                                        {% endif %}
+                                        {% if h.tipo == 2 %}
+                                            <a href="{{ h.arquivo.url }}" class="blue"><h4> Diário Oficial edição extra</h4></a>
+                                        {% endif %}
+                                        <h5>{{ h.publicacao }}</h5><br />
+                                    </div>
+                                    {% for arq_extra in arquivos_extra %}
+                                        {% if arq_extra.diario_id == h.id %}
+                                            <div class="list-group">
+                                                <h4 class="list-group-item"><a href="{{ arq_extra.arquivo.url }}" class="text-primary">{{ arq_extra.descricao }}</a>
+                                                </h4>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% else %}
+                            <div class="row">
+                                <div class="alert alert-danger col-xs-12">
+                                    <h3>Não há publicações hoje.</h3>
+                                </div>
+                             </div>
+                            {% endif %}
+                            <div class="row">
+                                <fieldset>
+                                    <legend>Utilize os filtros abaixo para pesquisar os diários oficiais.</legend>
+                                    <form method="get" action="{% url 'diario_oficial:busca_diario_view' %}">
+                                        <div class="form-group">
+                                            <h5 class="text-primary">Número do documento</h5>
+                                            <input name="num" type="text"  class="form-control" size="10" maxlength="10">
+                                        </div>
+
+                                         <div class="form-group">
+                                            <h5 class="text-primary">Pesquisa por palavra chave</h5>
+                                            <input name="termo" type="text" class="form-control" id="termo" />
+                                        </div>
+                                        <div class="form-group">
+                                            <h5 class="text-primary">Pesquisar pelo ano</h5>
+                                            <select name="an" class="form-control">
+                                                <option value="">ano</option>
+                                                {% for a in ano %}
+                                                    <option value="{{ a.ano }}">{{ a.ano }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5 class="text-primary">Pesquisa pelo mês</h5>
+                                            <select name="me" class="form-control">
+                                                <option value="">mês</option>
+                                                {% for m in mes %}
+                                                    <option value="{{ m.mes }}">{{ m.mes }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5 class="text-primary">Pesquisar por uma data específica</h5>
+                                            <input name="dat" type="texto" class="form-control dateinput" />
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <button value="{{ search_term }}" class="btn btn-info" id="enviar">Pesquisar</button>
+                                    </form>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    {% block extra_javascript %}
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script>
+            $(".dateinput").datepicker({
+                dateFormat: 'yy-mm-dd',
+                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                nextText: 'Próximo',
+                prevText: 'Anterior'
+            });
+            $(document).ready(function() {
+                $('.dateinput');
+            });
+        </script>
+
+        <script>
+    $(function() {
+        if( $("input[name='termo']").focus())
+            $("#enviar").click(function() {
+                $(".error").hide();
+                var hasError = false;
+                var searchReg = /^[a-zA-Z0-9-]+$/;
+                var searchVal = $("#termo").val();
+                var theLength = $("#termo").val().length;
+                if (searchVal == '' || theLength < 3 ) {
+                    document.querySelector('#termo').value = "";
+                    document.querySelector('#termo').placeholder = "minimo 3 caracteres";
+                    hasError = true;
+                } else if (!searchReg.test(searchVal)) {
+                    document.querySelector('#termo').value = "";
+                    document.querySelector('#termo').placeholder = "caracteres inválidos";
+                    hasError = true;
+                }
+                if (hasError == true) {
+                    return false;
+                }
+            }));
+    });
+</script>
+    {% endblock %}
+{% endblock %}
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

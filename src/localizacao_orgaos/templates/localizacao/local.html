@@ -1,0 +1,98 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h1><img src="{% static 'images/localizacao/telefones.png' %}" alt=""> Telefones e endereços</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / container-fluid main-content-->
+
+
+
+                    <div class="row">
+                        <!-- container -->
+                        <div class="col-xs-12 col-sm-8">
+                            <form id="contact" method="get" action="{% url 'localizacao:busca_localizacao_view' %}" form-horizontal>
+                                <div class="form-group">
+                                    <select name="secretaria" class="form-control">
+                                        <option value="">Secretaria</option>
+                                        {% for sec in secre %}
+                                            <option value="{{ sec.secretaria }}">
+                                                {% if sec.secretaria   ==   'administracao' %} Administração e Finanças
+                                                {% elif sec.secretaria ==   'social' %}    Assistencia Social
+                                                {% elif sec.secretaria ==   'educacao' %}    Educação
+                                                {% elif sec.secretaria ==   'infra' %}    Infraestrutura
+                                                {% elif sec.secretaria ==   'saude' %}    Saúde
+                                                {% elif sec.secretaria ==   'esportes' %}    Esportes, Cultura e Turismo
+                                                {% elif sec.secretaria ==   'gabinete' %}    Gabinete do Prefeito
+                                                {% else %} Outros
+                                                {% endif %}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input name="orgao" class="form-control" type="text"  placeholder="Nome" size="60" maxlength="60">
+                                </div>
+                                <div class="form-group">
+                                    <input name="endereco" class="form-control" type="text"  placeholder="Endereço" size="60" maxlength="60">
+                                </div>
+                                <div class="form-group">
+                                    <input name="telefone" class="form-control" type="text"  placeholder="Telefone" size="60" maxlength="60">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-info" value="{{ search_term }}">Pesquisar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <hr>
+
+                        </fieldset>
+                        <div class="container-fluid main-content">
+                            <div class="description text-success">
+
+                                Utilize os filtros para pesquisar informações referentes aos orgãos públicos que deseja,
+                                aqui são listados os telefones, endereços e horário de funcionamento dos orgãos públicos do município.
+                                <br />
+                                Se quiser apenas listar os orgãos de uma determinada Secretaria, selecione e em seguida clique no botão pesquisar.
+                                para listar todos os orgãos, apenas clique no botão pesquisar sem seleção nenhuma
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

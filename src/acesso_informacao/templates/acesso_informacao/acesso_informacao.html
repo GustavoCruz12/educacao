@@ -1,0 +1,47 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/servicos_icons/acessoinformacao_0.jpg' %}" alt=""> Lei de acesso a informação</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                {% include "acesso_informacao/includes/acesso_informacao_text.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

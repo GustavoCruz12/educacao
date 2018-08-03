@@ -1,0 +1,61 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Secretaria Municipal da Educação</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/secretaria_educ/botao-educacao.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    A Secretaria Municipal da Educação é responsável por estruturar, organizar, manter e desenvolver os órgãos e instituições oficiais do seu sistema de ensino além de promover a integração das políticas educacionais da União e do Estado e do pleno desenvolvimento do educando, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                        <p class="text-justify">
+                            Compete à Secretaria também exercer ação redistributiva em relação às escolas, propor e baixar normas complementares para o seu sistema de ensino, autorizar, credenciar e supervisionar os estabelecimentos do seu sistema de ensino, elaborar e executar proposta pedagógica de acordo com a política educacional do Município, propiciar ensino fundamental e infantil, com prioridade ao primeiro, através de creches e pré-escolas, inclusive aos portadores de necessidades especiais por meio de docentes especificamente qualificados, efetivar a chamada pública dos alunos para o acesso ao ensino fundamental, zelar, junto aos pais e responsáveis, pela frequência do aluno à escola.
+                        </p>
+                        <p class="text-justify">
+                            Ajustar e desenvolver convênios com órgãos federais, estaduais e instituições particulares, objetivando o desenvolvimento das atividades no âmbito de sua competência. Gerenciar os serviços de alimentação escolar e a realização de eventos municipais na área de sua competência. Recensear a população em idade escolar para o ensino fundamental e os jovens e adultos que a ele não tiveram acesso em colaboração com o Estado e com a assistência da União.                        </p>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_educacao.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

@@ -1,0 +1,50 @@
+/***** - logo and ADV *****/
+
+.logo-adv-bar {
+    background: $brand-white;
+    line-height: 129px;
+}
+
+.logo {
+    // margin-top:54px;
+    display: inline-block;
+    // line-height: 130px;
+    @media (max-width: $screen-sm-max) {
+        display: block;
+        // margin: 30px 0 0px 0;
+    }
+    img {
+        display: inline-block;
+        @media (max-width: $screen-sm-max) {
+            display: block;
+            margin: 30px auto 0;
+        }
+    }
+}
+
+.logo svg path {
+    stroke-width: 4px;
+    background-color: $brand-orang;
+}
+
+.logo svg path,
+.logo svg line,
+.logo svg polyline {
+    stroke: $brand-white;
+    stroke-width: 4px;
+}
+
+.logo svg path {
+    fill: transparent;
+}
+
+.logo svg polyline {
+    stroke-width: 4px;
+}
+
+.header-adv {
+    margin: 19.5px 0;
+    @media (max-width: $screen-md-max) {
+        margin: 37px 0px;
+    }
+}

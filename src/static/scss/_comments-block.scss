@@ -1,0 +1,81 @@
+    /**
+ * 11.4 - Comments
+ */
+    
+    .comments-area {
+        .comments-title {
+            color: $brand-black;
+        }
+        .comment-list {
+            // border: 1px solid green;
+            padding-left: 0;
+            // margin:0;
+            .comment {
+                // border: 1px solid yellow;
+                list-style-type: none;
+                margin-bottom: 30px;
+                .comment-body {
+                    border-bottom: 1px solid $brand-grayDe;
+                    padding-bottom: 21px;
+                    .comment-author {
+                        @extend .clearfix;
+                        // border: 1px solid green;
+                        .avatar {
+                            // border: 1px solid red;
+                            // float: left;
+                        }
+                        //auther comment's name 
+                        .fn {
+                            // float: left;
+                            margin-left: 20px;
+                            margin-right: 10px;
+                            color: $brand-black;
+                            font-size: 18px;
+                            font-weight: bold;
+                            font-style: normal;
+                            a {
+                                color: $brand-black;
+                            }
+                        }
+                        // says word after the name 
+                        .says {
+                            // float: left;
+                            color: $brand-sec;
+                            display: none;
+                        }
+                    }
+                    .comment-meta {
+                        .comment-edit-link.comment-edit-link {
+                            @extend .small-btn;
+                        }
+                    }
+                    .reply {
+                        // text-align: right;
+                        .comment-reply-link {
+                            @extend .small-btn;
+                        }
+                    }
+                    // .comment-metadata {
+                    //     .comment-meta {
+                    //         .comment-author {
+                    //             .avatar {}
+                    //             .edit-link {
+                    //                 .comment-edit-link {}
+                    //             }
+                    //         }
+                    //         // .comment{}
+                    //     }
+                    // }
+                    // .comment-author {
+                    //     .authorImage {}
+                    //     cite {
+                    //         a {}
+                    //     }
+                    // }
+                }
+                .children {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }

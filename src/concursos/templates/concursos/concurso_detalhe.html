@@ -1,0 +1,89 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h3>{{ concurso_detalhe.tipo }} nº {{ concurso_detalhe.numero }}/{{ concurso_detalhe.ano }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- Table -->
+                            <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Arquivos</th>
+
+                                            <th>Data da Publicação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                             {% for d in concurso_detalhe.arquivos.all %}
+                                    <tr>
+                                        <td><a href="{{ d.arquivo.url }}" class="text-primary">{{ d.descricao }}</a></td>
+                                        <td>{{ d.publicacao }}</td>
+                                    </tr>
+                            {% endfor %}
+                                    </tbody>
+                           </table>
+                            <!-- End Table -->
+                            {% if concurso_detalhe.observacoes %}
+                                <p class="post-content">{{ concurso_detalhe.observacoes|safe }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+    <div class="container">
+        <div class="row">
+            <hr>
+            <div class="container-fluid main-content">
+                <div class="description text-success">
+                    A Prefeitura de Serrana reservou este espaço para manter você
+                    atualizado de acordo com as publicações relativas aos concursos
+                    e processos seletivos de nossa cidade.<br />
+                    <br />
+                    <i>Utilize os filtros para visualizar os arquivos que deseja</i><br />
+                    <hr>
+                    <br /><br />
+                    Para mais informações entrar em contato no Recursos Humanos.<br />
+                    <p class="blog-post">
+                        <strong>
+                            Rua: Dr. Tancredo de Almeida Neves, 176<br />
+                            CEP: 14150-000<br />
+                            Telefone: 3987-9878 / 3987-9848
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

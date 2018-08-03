@@ -1,0 +1,76 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2 class="title"><img src="{% static 'images/secretaria_adm/botao-cidadao.png'%}"> Serviços ao cidadão</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="blog-list">
+                            <h4 class="text-primary">Certidão negativa de imóveis, guias de IPTU e guias unificadas através do link abaixo.
+                                <br>
+
+                            </h4>
+                            <ul class="list-group">
+                                <a href="https://e-gov.betha.com.br/cidadaoweb3/main.faces" class="blue">
+                                    <li class="list-group-item list-group-item-success">Certidão negativa de imóveis e guias unificadas</li>
+                                </a>
+                            </ul>
+                            <div class="post-cont-type clearfix">
+                                <div class="description">
+                                    O Imposto Predial e Territorial Urbano é o Imposto cobrado anualmente pela Prefeitura de todas as pessoas que possuem imóveis ou propriedades na cidade. Quando este imóvel é somente um terreno, sem nenhuma construção, é cobrado o Imposto Territorial; quando neste imóvel houver uma edificação tipo residência, comércio, indústria, galpão, prédios, etc. será cobrado o Imposto Predial.<br />
+                                    <br>
+                                    <h5 class="text-primary">Lançamento do IPTU</h5>
+                                    <hr>
+                                    O valor do Imposto Predial e Territorial Urbano será lançado em moeda corrente Real (R$).<br>
+                                    O valor do IPTU não tem relação direta com a inflação e sim com a valorização ou não do imóvel no mercado imobiliário, esclarecendo que a comparação serve para demonstrar que o cálculo corresponde à realidade da cidade e não onera o contribuinte.
+                                    <br>
+                                    <br>
+                                    No link acima você pode retirar Certidão negativa de imóveis, Guias de IPTU e a Guia unificada.
+                                    <br>
+                                    <br>
+                                    Estamos trabalhando para disponibilizar mais serviços online em breve.
+                                </div>
+                                <br>
+                            </div>
+                            <br>
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_administracao.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<!-- Start "aside sidebar" -->
+<aside class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <div class="main-title clearfix">
+                <h3 class="title border-b-dark-white">Informações<span class="border blue-bg"></span></h3>
+            </div>
+            <div class="sidebar-widget-contnet clrearfix">
+                <ul class="list-sidebar">
+                    <li><a href="{% url 'ouvidoria:home' %}">Inicio</a></li>
+                    <li><a href="{% url 'ouvidoria:sobre' %}">Sobre a Ouvidoria Municipal</a></li>
+                </ul>
+            </div>
+            <!-- sidebar-widget-contnet -->
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <div class="main-title clearfix">
+                <h3 class="title border-b-dark-white">Links úteis<span class="border blue-bg"></span></h3>
+            </div>
+            <div class="sidebar-widget-contnet clrearfix">
+                <ul class="list-sidebar">
+                    <li><a href="http://www.ouvidoriageral.sp.gov.br/">Ouvidoria Geral do Estado de São Paulo</a></li>
+                    <li><a href="http://www.cgu.gov.br/assuntos/ouvidoria">Ouvidoria Geral da União</a></li>
+                    <li><a href="{% url 'acesso_informacao:acesso_informacao_url' %}">Lei de Acesso a Informação</a></li>
+
+                </ul>
+            </div>
+            <!-- sidebar-widget-contnet -->
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn alert-info">
+
+            <p><strong>Ouvidor:</strong> Frederico Augusto Vilela</p>
+            <p><strong>Endereço: </strong>Rua: Drº Tancredo de Almeida Neves, 176</p>
+            <i><strong>Telefone: </strong>(16) 3987-9890</i>
+        </div>
+        <!-- End "sidebar-widget" -->
+    </div>
+</aside>
+<!-- / secondary col-xs-12 col-sm-4  hidden-xs -->
+<!-- End "aside sidebar" -->

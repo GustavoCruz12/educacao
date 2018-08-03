@@ -1,0 +1,53 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Conheça o Prefeito</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/gabinete/prefeito.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <h4 class="text-info">VALÉRIO ANTÔNIO GALANTE</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "gabinete/includes/aside_mensagens_gabinete.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

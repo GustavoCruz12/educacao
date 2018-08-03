@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <nav>
+                <ul class="list-horizontal">
+                    <li><a data-color="#ccc" href="#">Acesso rápido</a>
+                        <ul>
+                            <li><a data-color="#ccc" href="{% url 'home:home_view' %}">ínicio</a></li>
+                            <li><a data-color="#ccc" href="{% url 'diario_oficial:diario_view' %}">Diário Oficial</a></li>
+                            <li><a data-color="#ccc" href="{% url 'transparencia:transparencia_view' %}">Portal transparência</a></li>
+                            <li><a data-color="#ccc" href="{% url 'administracao:administracao_cidadao' %}">Guias de IPTU/Certidão Negativa</a></li>
+                            <li><a data-color="#ccc" href="{% url 'administracao:empresa' %}">Apoio a Empresas</a></li>
+                            <li><a data-color="#ccc" href="https://e-gov.betha.com.br/e-nota/login.faces?lastUrl=/selecaodemodulo.faces">FLY E-NOTA</a></li>
+                            <li><a data-color="#ccc" href="https://e-gov.betha.com.br/livroeletronico2">FLY LIVRO ELETRÔNICO</a></li>
+                            <li><a data-color="#ccc" href="{% url 'saude:saude_escala_list_view' %}">Escalas médicas</a></li>
+                            <li><a data-color="#ccc" href="{% url 'leis:leis_view' %}">Leis municipais</a></li>
+                            <li><a data-color="#ccc" href="{% url 'concursos:tipo_concurso_view' %}">Concursos públicos</a></li>
+                            <li><a data-color="#ccc" href="{% url 'localizacao:localizacao_view' %}">Telefones e endereços</a></li>
+                        </ul>
+                    </li>
+                    <li><a data-color="#ccc" href="https://mail.serrana.sp.gov.br">webmail</a></li>
+                    <li><a data-color="#ccc" href="{% url 'diario_oficial:diario_view' %}">Diário Oficial</a></li>
+                    <li><a data-color="#ccc" href="{% url 'acesso_informacao:acesso_informacao_url' %}">Acesso a informação</a></li>
+                    <li><a data-color="#ccc" href="{% url 'licitacoes:modalidade_view' %}">Licitações</a></li>
+                    <li><a data-color="#ccc" href="{% url 'leis:leis_view' %}">Leis</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- / col-xs-12 col-sm-6 -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social-media pull-right">
+                <a class="youtube-hover" title="" data-toggle="tooltip" href="https://www.youtube.com/channel/UCEJRaGsmAUYq4kvMCtD97Fg" data-original-title="twitter"><i
+                        class="fa fa-youtube-play"></i></a>
+                <a class="facebook-hover" title="" data-toggle="tooltip" href="https://www.facebook.com/oficialprefeituraserrana/" data-original-title="facebook"><i
+                        class="fa fa-facebook"></i></a>
+            </div>
+            <!-- / social-media -->
+            <div class="data">
+                <i>Serrana, {% now 'd/m/Y' %}</i> <i id="timer"></i>
+            </div>
+        </div>
+        <!-- / col-xs-12 col-sm-6 -->
+    </div>
+    <!-- / row -->
+</div>

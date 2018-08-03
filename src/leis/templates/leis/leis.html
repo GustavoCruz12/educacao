@@ -1,0 +1,91 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/leis/botao-leis.png' %}"> Leis Municipais</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-contnet clrearfix">
+
+                        <h4 class="text-primary">Utilize os filtros para pesquisar Leis ordinárias, leis complementares, decretos e portarias municipais.</h4>
+
+                    </div>
+                    <hr>
+                    <!-- container-fluid center-gray-block -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <form method="get" action="{% url 'leis:busca_lei_view' %}">
+                                <div class="form-group">
+                                    <select name="t" class="form-control">
+                                        <option value="">Tipo do documento</option>
+                                        {% for l in tl %}
+                                            <option value="{{ l.tipo_lei }}">
+                                                {% if l.tipo_lei   ==   "complementar" %} Leis complementares
+                                                {% elif l.tipo_lei ==   "ordinaria" %}    Leis ordinárias
+                                                {% elif l.tipo_lei ==   "decreto" %}      Decretos
+                                                {% elif l.tipo_lei ==   "convenio" %}     Convênios municipais
+                                                {% elif l.tipo_lei ==   "portaria" %}     Portarias
+                                                {% endif %}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input name="n" type="text"  class="form-control"  placeholder="numero da lei, portaria ou decreto" size="10" maxlength="30">
+                                </div>
+                                <div class="form-group">
+                                    <select name="a" class="form-control">
+                                        <option value="">ano</option>
+                                        {% for l2 in an %}
+                                            <option value="{{ l2.ano }}">{{ l2.ano }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button value="{{ search_term }}" class="btn btn-info">pesquisar</button>
+                                </div>
+                                <hr />
+                                <div class="form-group">
+                                    <label for="t"><strong>Ou digite um termo a ser pesquisado</strong></label>
+                                    <input name="p" class="form-control" type="text"  placeholder="digite um termo a ser pesquisado" size="20" maxlength="30">
+                                </div>
+                                <button value="{{ search_term }}" class="btn btn-info">Pesquisar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </main>
+                <!-- SIDEBAR AQUI -->
+
+                {% include "home/includes/aside_home.html" %}
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

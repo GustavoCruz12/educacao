@@ -1,0 +1,64 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Secretaria Municipal da Infraestrutura</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/secretaria_infra/botao-adm.infra.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    Compete à Secretaria Municipal da Infraestrutura gerenciar a execução de obras públicas, fiscalizar as obras contratadas, a implantação de loteamentos, o parcelamento de glebas e as aberturas de vias, fiscalizar a execução de obras e a utilização das áreas cedidas a título de concessão real ou permissão de uso. Cabe à Secretaria fiscalizar a obediência e as normas de postura, fiscalizar a obediência as normas na construção executada por particulares, executar e fiscalizar os serviços topográficos, manter os próprios municipais e os utilizados pela Administração.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                        <p class="text-justify">
+                            Também gerenciar a execução e a manutenção da infra-estrutura de vias e logradouros públicos, das estradas municipais, executar serviços de manutenção do mobiliário e outros materiais permanentes, executar, manter e implantar a urbanização de praças, áreas verdes e a arborização das vias públicas.
+                        </p>
+                        <p class="text-justify">
+                            Gerenciar os logradouros públicos, a execução de água, esgoto e saneamento básico, os serviços terceirizados na área de sua competência, o sistema de trânsito municipal, assim como fiscalizar os serviços de táxi, moto-táxi, escolares e de transporte de aluguel, fiscalizar o consumo e a prestação dos serviços de água e esgoto, arrecadar a tarifa de uso de água e esgoto, na forma do regulamento além de gerenciar seus recursos humanos, administrativos e custo operacional e manter a frota municipal de veículos e máquinas.
+                        </p>
+                        <p class="text-justify">
+                            Propor, normatizar, fiscalizar e autorizar a exploração dos serviços de táxi, moto-táxi, escolares e de transporte de aluguel, promover e coordenar campanhas educativas de trânsito, exercer outras competências que lhe forem atribuídas em regulamento próprio, fiscalizar o cumprimento do código de posturas. Fornecer todos os subsídios técnicos, operacionais e avaliações requisitados pela assessoria de negócios jurídicos e suas unidades administrativas.
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_infra.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

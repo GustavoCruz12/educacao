@@ -1,0 +1,95 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/leis/botao-leis.png' %}">LOA/LDO/PPA</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-contnet clrearfix">
+                        <fieldset>
+                            <legend><h3>Leis Orçamentárias Anuais (LOA)</h3></legend>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1854_-_loa.pdf" class="text-primary">Lei ordinária nº 1854 de 2017</a>
+                                <p class="post-content">Estima a receita e fixa a despesa do Município de Serrana para o exercício de 2018 e dá outras providências.</p>
+                            </h4>
+                            <br>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1854_-_emenda_aditiva.pdf" class="text-primary">Lei ordinária nº 1854 de 2017</a>
+                                <p class="post-content">Emenda Aditiva - Câmara Municipal</p>
+                            </h4>
+                            <br>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1769_-_loa..pdf" class="text-primary">Lei ordinária nº 1769 de 2016</a>
+                                <p class="post-content">Estima a receita e fixa a despesa do Município de Serrana para o exercício de 2017 e dá outras providências.</p>
+                            </h4>
+                            
+                        </fieldset>
+                        <hr>
+                        <fieldset>
+                            <legend><h3>Leis de Diretrizes Orçamentárias (LDO)</h3></legend>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1852_-_ldo.pdf" class="text-primary">Lei ordinária nº 1852 de 2017 </a>
+                                <p class="post-content">Dispõe sobre as Diretrizes Orçamentárias para o exercício de 2018 e dá outras providências.</p>
+                            </h4>
+                            <br>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1745_-_ldo_com_anexos.pdf" class="text-primary">Lei ordinária nº 1745 de 2016</a>
+                                <p class="post-content">Dispõe sobre as Diretrizes Orçamentárias para o exercício financeiro de 2017, e dá outras providências.</p>
+                            </h4>
+                            <br>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1745_emenda_modificativa_ldo.pdf" class="text-primary">Lei ordinária nº 1745 de 2016</a>
+                                <p class="post-content">Emenda modificativa à LDO - Lei 1745/2016.</p>
+                            </h4>
+                            <br>
+                        </fieldset>
+                        <hr>
+                        <fieldset>
+                            <legend><h3>Planos Plurianuais Anuais(PPA)</h3></legend>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1853_-_ppa.pdf" class="text-primary">Lei ordinária nº 1853 de 2017</a>
+                                <p class="post-content">Dispõe sobre o Plano Plurianual do Município para o período de 2018 a 2021 e dá outras providências.</p>
+                            </h4>
+                            <br>
+                            <h4 >
+                                <a href="/media/uploads/leis/lei_1585_-_ppa.pdf" class="text-primary">Lei ordinária nº 1585 de 2013</a>
+                                <p class="post-content">Dispõe sobre o Plano Plurianual do Município para o período de 2014 a 2017, e dá outras providências.</p>
+                            </h4>
+                            <br>
+                        </fieldset>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+
+                {% include "home/includes/aside_home.html" %}
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

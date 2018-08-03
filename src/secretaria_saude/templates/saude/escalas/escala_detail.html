@@ -1,0 +1,61 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <!-- Start "main" -->
+            <main class="main col-xs-12">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Table -->
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <h2><img src="{% static 'images/secretaria_saude/botao-unidade-medica.png'%}"> Unidades de Saúde e Escalas Médicas</h2>
+                        </div>
+                        <table class="table table-striped">
+                            <caption><h4 class="text-primary">{{ saude_escala_detalhe_view.unidade }}</h4></caption>
+                            <tr>
+                                <td>Endereço:</td>
+                                <td>{{ saude_escala_detalhe_view.endereco }}</td>
+                            </tr>
+                            <tr>
+                                <td>Telefone(s):</td>
+                                <td>{{ saude_escala_detalhe_view.telefone }}</td>
+                            </tr>
+                            <tr>
+                                <td>Horário de Funcionamento:</td>
+                                <td>{{ saude_escala_detalhe_view.horario_funcionamento }}</td>
+                            </tr>
+                            <tr>
+                                <td>Arquivo com a escala médica da Unidade:</td>
+                                <td><a href="{{ saude_escala_detalhe_view.arquivo.url }}"><img src="{% static 'images/secretaria_saude/download.png' %}"></a></td>
+                            </tr>
+                            <tr>
+                                <td>Data da última atualização:</td>
+                                <td>{{ saude_escala_detalhe_view.dt_atualizacao}}</td>
+                            </tr>
+                        </table>
+                        <div class="alert-danger">
+                            <h4 class="bold">* A escala poderá sofrer alteração no decorrer do mês de acordo com a disponibilidade de cada profissional médico.</h4>
+                        </div>
+                        <!-- End Table -->
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- row -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

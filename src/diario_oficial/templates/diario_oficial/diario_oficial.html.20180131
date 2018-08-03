@@ -1,0 +1,117 @@
+{% extends "base_home.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/diario_oficial/diario-oficial.png' %}"> Diário Oficial</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="blog-list blog-post wow fadeInUp">
+                            {% if hoje %}
+                                {% for h in hoje %}
+                                    <div class="alert alert-info">
+                                        <a href="{{ h.arquivo.url }}" class="blue"><h3>Diário Oficial do dia</h3></a>
+                                        <h5>{{ h.publicacao }} </h5><br />
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="alert alert-danger col-xs-12">
+                                    <h3>Não existe Diário Ofícial hoje.</h3>
+                                </div>
+                            {% endif %}
+                            <hr>
+                            <h4 class="text-primary">Para documentos anteriores pesquise pelo numero do documento...</h4>
+                            <form method="get" action="{% url 'diario_oficial:busca_diario_view' %}">
+                                <div class="form-group">
+                                    <input name="num" type="text"  class="form-control"  placeholder="número do documento" size="10" maxlength="10">
+                                </div>
+                                <h4 class="text-primary">...ou utilize os filtros abaixo</h4>
+                                <div class="form-group">
+                                    <select name="an" class="form-control">
+                                        <option value="">ano</option>
+                                        {% for a in ano %}
+                                            <option value="{{ a.ano }}">{{ a.ano }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="me" class="form-control">
+                                        <option value="">mês</option>
+                                        {% for m in mes %}
+                                            <option value="{{ m.mes }}">{{ m.mes }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <h4 class="text-primary">Pesquisar por uma data específica</h4>
+                                    <input name="dat" type="date" class="form-control dateinput" />
+                                </div>
+                                <hr />
+                                <button value="{{ search_term }}" class="btn btn-info">Pesquisar</button>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    {% block extra_javascript %}
+        <script>
+            $(function() {
+                $('#id_nome').focus()
+            });
+        </script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script>
+            $(".dateinput").datepicker({
+                dateFormat: 'yy-mm-dd',
+                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                nextText: 'Próximo',
+                prevText: 'Anterior'
+            });
+            $(document).ready(function() {
+                $('.dateinput');
+            });
+        </script>
+    {% endblock %}
+    {% block css %}
+        <style>
+            #id_nome, #id_sobrenome {
+                text-transform:capitalize;
+            }
+        </style>
+    {% endblock %}
+{% endblock %}
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/licitacoes/licitacoes.png' %}" alt=""> {{ detalhe.modalidade }} nº {{ detalhe.numero }}/{{ detalhe.ano }} </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="list-group">
+                                <h3 class="text-info">Arquivos</h3>
+                                {% for d in detalhe.arquivos.all %}
+                                <h5 class="list-group-item"><a href="{{ d.arquivo.url }}" class="text-primary">{{ d.descricao }}</a></h5>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

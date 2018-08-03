@@ -1,0 +1,110 @@
+{% extends "base_home.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/ouvidoria/botao-ouvidoria.png' %}"> Ouvidoria Municipal </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+
+                        <div class="blog-list blog-post wow fadeInUp">
+                            <h4 class="text-primary">Elogio, Denúncia, Reclamação, Solicitação ou Sugestão</h4>
+                            <hr>
+                            <i>Os campos com * são obrigatórios</i>
+                            {% if messages %}
+                                <div class=" alert alert-success">
+                                    {% for message in messages %}
+                                        <h4 class="{{ message.tags }}">{{ message }}</h4>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <form method="post"  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <!-- container-fluid center-gray-block -->
+                                {% load widget_tweaks %}
+
+                                {% for field in form %}
+                                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {% render_field field class="form-control" %}
+                                        {% for error in field.errors %}
+                                            <p class="help-block">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                <div class="form-actions">
+                                    <button class="btn btn-info" type="submit">Enviar</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "ouvidoria/includes/aside_mensagens_ouvidoria.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid center-gray-block">
+                <div class="sidebar-widget-contnet clrearfix">
+                    <div class="alert-info text-center">
+                        O atendimento feito pela Ouvidoria é gratuito e as reivindicações poderão ser formuladas por site, email, telefone e presencialmente:
+
+                        E-MAIL: ouvidoria@serrana.sp.gov.br, atendimento presencial no horário de atendimento da PMS de segunda a sexta feira, ou pelo Telefone: 3987-9890 da Ouvidoria Municipal.
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    {% block extra_javascript %}
+        <script>
+            $(function() {
+                $('#id_nome').focus()
+            });
+        </script>
+    {% endblock %}
+    {% block css %}
+        <style>
+            #id_nome, #id_sobrenome {
+                text-transform:capitalize;
+            }
+        </style>
+
+    {% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

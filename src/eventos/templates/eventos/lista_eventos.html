@@ -1,0 +1,92 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/agenda_eventos/botao-eventos.png' %}"> Eventos</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alert-info text-center">
+                            <h4>As agendas podem sofrer alterações para adequação de horário ou por alguma adversidade eventual</h4>
+                        </div>
+                        <br>
+                        {% if lista_eventos %}
+                            {% for list_even in lista_eventos %}
+                                <div class="col-xs-12 col-sm-4">
+                                    <!-- Start "post-review" -->
+                                    <div class="post-review margin-b-widget-inner-pages">
+
+                                        <div class="progress-bar-review">
+                                            <div class="row">
+                                                <div class="text-center" >
+                                                    <h5><a href="{{ list_even.get_absolute_url }}" class="text-primary">{{ list_even.titulo }}</a></h5>
+                                                    <p class="post-cont-type">{{ list_even.get_secretaria_display }}</p>
+                                                    {% load thumbnail_maker %}
+                                                    {% usethumbnail list_even.imagem "eventos" as im %}
+                                                        <figure><img src="{{ list_even.imagem.url }}" width="{{ im.width }}" height="{{ im.height }}"></figure>
+                                                    {% endusethumbnail %}
+                                                    <p class="post-cont-type">{{ list_even.data_evento|date:"d/m/Y" }}</p>
+                                                    <p class="post-cont-type">{{ list_even.horario }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / progress-bar-review -->
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="alert-warning">
+                                <h3>Não existem eventos previstos</h3></div>
+                        {% endif %}
+                    </div>
+                    {% if is_paginated %}
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                            {% else %}
+                                <li class="disabled"><span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in paginator.page_range %}
+                                {% if page_obj.number == i %}
+                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                            {% else %}
+                                <li class="disabled"><span>&raquo;</span></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

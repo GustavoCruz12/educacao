@@ -1,0 +1,62 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h3 class="title-h3-pink">Secretaria Municipal da Assistência Social</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/secretaria_social/botao-social.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    A Secretaria Municipal De Desenvolvimento Social é o órgão responsável pelo desenvolvimento de projetos voltados para o resgate e afirmação da cidadania, incentivando a participação do munícipe no estabelecimento de políticas públicas. É função do órgão, entre outros, a orientação jurídica aos legalmente necessitados, viabilizando o acesso à Justiça através de programas apropriados. Uma de suas premissas é desenvolver ações ligadas à relação de trabalho e instituição de cursos profissionalizantes para minimizar o impacto do desemprego no município. Recebe e encaminha soluções às reclamações do munícipe, relativas ao serviço público.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                        <p class="text-justify">
+                           Também assessora as associações de bairros e as entidades sociais filantrópicas. É de sua atribuição o gerenciamento dos centros comunitários, núcleos de orientação às crianças e adolescentes e abrigos. Desenvolve, ainda, programas destinados às crianças e aos adolescentes em situação de risco, com orientação familiar. Todas as ações e serviços sociais são desenvolvidos no CRAS que fica à rua José Correa Filho s/nº. Em parceria com os governos estadual e federal, outras iniciativas ajudam a formar uma ampla rede de atendimento. Podem ser citados, por exemplo, o Renda Cidadã que atende famílias de baixa renda, socialmente vulneráveis.
+                        </p>
+
+                        <p class="text-justify">
+                            Para permanecer no programa, as famílias devem seguir determinadas regras, como manter filhos nas escolas, vacinação das crianças em dia, participar de palestras e dos cursos de qualificação oferecidos pelo Programa Fortalecendo a Família. O programa Ação Jovem beneficia jovens de 15 a 24 anos que vivem em regiões de alta concentração de pobreza, com ensino fundamental incompleto e fora da escola. Inclui também aqueles que se encontram em regime de liberdade assistida. O PAIF (Programa de Atenção Integral a Família) é a principal ação social básica do Sistema Único de Assistência Social. Por meio dele são desenvolvidos serviços continuados para famílias socialmente vulneráveis na unidade do CRAS. O PAIF tem uma equipe técnica formada por psicólogas, assistentes sociais, auxiliar administrativo e coordenador. Benefício de Prestação Continuada – Este benefício é voltado para os idosos com deficiência e com renda per capita da família até um quarto do salário mínimo. O beneficiário recebe um salário mínimo. Para integrar o Agente Jovem, para o público de 15 a 17 anos, o principal critério é o jovem estar estudando ou retornar para a escola e frequentar as atividades sócio-educativas e as oficinas do CRAS.
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_social.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

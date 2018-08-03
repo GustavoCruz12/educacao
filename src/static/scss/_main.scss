@@ -1,0 +1,38 @@
+/***** - main *****/
+
+body {
+    font-family: $font-family-main;
+    background: $brand-white;
+    line-height: 30px;
+    word-wrap: break-word;
+}
+
+.page {
+    background: $brand-white
+}
+
+p {
+    font-family: $font-family-raleway;
+    line-height: 22px;
+}
+
+a {
+    color: $brand-sec
+}
+
+a:hover {
+    color: #4F616A;
+    text-decoration: none;
+}
+
+.main {
+    // margin-bottom: 25px;
+}
+
+#content {
+    margin: 80px auto;
+}
+
+.main-content {
+    background: $brand-white;
+}

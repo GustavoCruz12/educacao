@@ -1,0 +1,85 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "hot-posts" -->
+                <div class="col-xs-12 hot-posts">
+
+                </div>
+                <!-- / hot-posts -->
+                <!-- End "hot-posts" -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                <!-- container-fluid center-gray-block -->
+                                <div class="describe">
+                                    <p><strong>Aniversário</strong> - 10 de abril</p>
+
+                                    <p><strong>Fundação</strong> – 1875 ( Serafim José do Bem)</p>
+
+                                    <p><strong>Emancipação Política</strong> – 10/04/1949 (Ângelo Cavalheiro)</p>
+
+                                    <p><strong>Gentílico</strong> - serranense</p>
+
+                                    <p><strong>Altitude</strong> 568 metros acima do nível do mar (Clima Tropical)</p>
+
+
+                                    <p><strong>Geografia</strong> -
+                                    área de 125,744 km² 38.820 habitantes (IBGE – censo 2010)</p>
+
+                                    <p><strong>Hidrografia</strong> Rio Pardo e Rio Tamanduá</p>
+
+
+                                    <p><strong>Rodovias </strong> - SP 271 – SP 333 (ligação com a Rod. Anhanguera e Aeroporto Leite Lopes)</p>
+
+                                    <p><strong>Distancia da capital</strong> - 315 km</p>
+
+                                    <p><strong>Economia</strong>
+                                    IDH 0,775 (PNUD – censo 2000) |
+                                    PIB R$ 468.165,00 (IBGE – censo 2005) |
+                                    PIB per capita  R$ 12.062,00 (IBGE – censo 2005)</p>
+
+                                    <p><strong>Dados demográficos</strong>
+
+                                        População total: 40.195 (de acordo com o Seade)</p>
+                                    <i class="italic">Existe porém, uma população flutuante de aproximadamente 5.000 em virtude do período de safra, onde diversos trabalhadores vêm para a cidade em busca de trabalho.</i>
+                                      <hr>
+                                    <p><strong>Localização:</strong></p>
+
+                                    <img src="{% static 'images/secretaria_saude/serrana.jpg' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "serrana/includes/aside_mensagens_serrana.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

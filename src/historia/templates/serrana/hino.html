@@ -1,0 +1,222 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block css %}
+    <link href="{% static 'player/skin/blue.monday/jplayer.blue.monday.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "hot-posts" -->
+                <div class="col-xs-12 hot-posts">
+
+                </div>
+                <!-- / hot-posts -->
+                <!-- End "hot-posts" -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                <!-- container-fluid center-gray-block -->
+                                <div class="describe">
+                                    <h4 class="text-primary">Hino de Serrana</h4>
+                    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+                    <div id="jp_container_1" class="jp-audio">
+                        <div class="jp-type-playlist">
+                            <div class="jp-gui jp-interface">
+                                <ul class="jp-controls">
+                                    <li>
+                                        <a href="javascript:;" class="jp-previous" tabindex="1">previous</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-play" tabindex="1">play</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-pause" tabindex="1">pause</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-next" tabindex="1">next</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-stop" tabindex="1">stop</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a>
+                                    </li>
+                                </ul>
+                                <div class="jp-progress">
+                                    <div class="jp-seek-bar">
+                                        <div class="jp-play-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
+                                </div>
+                                <div class="jp-time-holder">
+                                    <div class="jp-current-time"></div>
+                                    <div class="jp-duration"></div>
+                                </div>
+                                <ul class="jp-toggles">
+                                    <li>
+                                        <a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="jp-playlist">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="jp-no-solution">
+                                <span>Update Required</span>
+                                Você precisa atualizar seu navegador ou o flash player <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="post-contant">
+                            <strong>Letra e Música: Nelson Biasoli</strong>
+                            <br />
+                            Avante, avante
+                            <br />
+                            Serrana eis o grito
+                            <br />
+                            Avante, avante,
+                            <br />
+                            Olhando para o infinito
+                            <br />
+                            <br />
+
+                            Serrana de laços antigos
+                            <br />
+                            Raiz de um povo destemido
+                            <br />
+                            Heróico feito gigante
+                            <br />
+                            Ergue a pérola do Rio Pardo, triunfante
+                            <br />
+                            <br />
+
+                            Deus a fez bela sertanista
+                            <br />
+                            No mundo não há outra igual
+                            <br />
+                            Formoso Jardim Paulista
+                            <br />
+                            Na energia de teu canavial
+                            <br />
+                            <br />
+
+                            Sob o frio que corta a carne
+                            <br />
+                            Sob o sol abrasador<br />
+                            Planta a semente da felicidade
+                            <br />
+                            E cultiva a planta do amor
+                            <br />
+                            <br />
+
+                            Terra da verdade oh! Mãe gentil
+                            <br />
+                            De harmonia, pureza e glória
+                            <br />
+                            Mocidade ardente e viril
+                            <br />
+                            Cujos feitos ficaram na história
+                            <br />
+                            <br />
+
+                            Nova Serrana és um primor
+                            <br />
+                            Terra vermelha de heroísmo e valor
+                            <br />
+                            Cidade de rosas, usinas e labor
+                            <br />
+                            És do Brasil a mais linda flor
+                            <br />
+                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "serrana/includes/aside_mensagens_serrana.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    {% block extra_javascript %}
+        <script type="text/javascript" src="{% static 'player/js/jquery.jplayer.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'player/js/jplayer.playlist.min.js' %}"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function(){
+
+                new jPlayerPlaylist({
+                    jPlayer: "#jquery_jplayer_1",
+                    cssSelectorAncestor: "#jp_container_1"
+                }, [
+                    {
+                        title:"Hino de Serrana cantado",
+                        mp3:"{% static 'player/mp3/hino_cantado.mp3' %}",
+
+                    },
+                    {
+                        title:"Hino de Serrana instrumental",
+                        mp3:"{% static 'player/mp3/hino_tocado.mp3' %}",
+
+                    }
+
+                ], {
+                    swfPath: "{% static 'player/js' %}",
+                    supplied: "mp3",
+                    wmode: "window",
+                    smoothPlayBar: true,
+                    keyEnabled: true
+                });
+            });
+            //]]>
+        </script>
+
+    {% endblock %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

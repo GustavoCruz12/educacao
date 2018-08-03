@@ -1,0 +1,73 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Secretaria Municipal de Saúde</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/secretaria_saude/logo.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    À Secretaria Municipal da Saúde compete, estimular e garantir a ampla participação da comunidade na elaboração,
+                                    controle e avaliação da Política de Saúde do Município e promover ações coletivas e individuais de promoção,
+                                    prevenção, cura e reabilitação da saúde. Ao secretário cabe organizar os programas de saúde segundo a realidade
+                                    epidemiológica e populacional do Município, garantindo um serviço de boa qualidade e acesso da população aos equipamentos
+                                    de saúde além da equidade, resolutividade e integralidade nas ações de atenção à saúde.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                    <p class="text-justify">
+                        Está também entre suas atribuições, estabelecer prioridades a partir de estudos epidemiológicos, fortalecer mecanismos
+                        de controle através do Conselho Municipal de Saúde, estimulando a implementação de Comissões Locais de Saúde em todas as suas
+                        unidades. Permitir ampla divulgação das informações e dados em saúde e garantir nos termos de sua competência acesso gratuito a
+                        todos os níveis de complexidade do sistema.
+                    </p>
+                    <p class="text-justify">
+                        Implantar efetivamente sistema de referência e contra-referência, estabelecer mecanismos de controle sobre a produção,
+                        distribuição e consumo de produtos e serviços que envolvam riscos à saúde. Estabelece mecanismos de efetiva avaliação e controle
+                        da rede de serviços, e atua para valorizar as ações de caráter preventivo e promoção à saúde, visando a redução de internações e
+                        procedimentos desnecessários. É sua atribuição participar efetivamente das ações de integração e planejamento regional da saúde junto
+                        à Diretoria Regional respectiva, às Comissões Intergestoras Regionais e outras instâncias pertinentes ou sucedâneas.
+                    </p>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_saude.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

@@ -1,0 +1,87 @@
+{% extends "base_home.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Dúvidas, reclamações, sugestões</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                <h4>Entre em contato com a prefeitura.</h4>
+                                {% if messages %}
+                                    <div class=" alert alert-success">
+                                        {% for message in messages %}
+                                            <h4 class="{{ message.tags }}">{{ message }}</h4>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <!-- container-fluid center-gray-block -->
+                                    {% load widget_tweaks %}
+
+                                    {% for field in form %}
+                                        <div class="form-group{% if field.errors %} has-error{% endif %}">
+                                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                            {% render_field field class="form-control" %}
+                                            {% for error in field.errors %}
+                                                <p class="help-block">{{ error }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                    <div class="form-actions">
+                                        <button class="btn btn-info" type="submit">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    {% block extra_javascript %}
+        <script>
+            $(function() {
+                $('#id_nome').focus()
+            });
+        </script>
+        {% block css %}
+            <style>
+                #id_nome, #id_sobrenome {
+                    text-transform:capitalize;
+                }
+            </style>
+
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}

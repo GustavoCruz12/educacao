@@ -1,0 +1,55 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <h3 class="text-info">CONSULTA PÚBLICA N.º 001/2017</h3>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 alert alert-dismissable" role="alert">
+                            <fieldset class="text-justify">
+                                <strong>O PREFEITO MUNICIPAL DE SERRANA,</strong> Estado de São Paulo, no uso de suas atribuições legais, em pleno atendimento ao que dispõe o art. 51 “caput” da Lei 11.445/2007, apresenta para conhecimento e contribuições de quaisquer interessados no âmbito da Consulta Pública n.º 001/2017 acerca da <strong>Revisão do Plano Municipal de Saneamento Básico do Município de Serrana. </strong> <br /><br />
+                                A Minuta de Revisão do Plano Municipal de Saneamento Básico está disponível para <strong>Consulta Pública</strong> durante <strong>o período de 23 de agosto de 2017 a 22 de setembro de 2017,</strong> nos seguintes endereços: Secretaria Municipal de Infraestrutura da Prefeitura de Serrana, situada na Rua Dr. Tancredo de Almeida Neves, 176, das 8h00 às 11h00 e das 13h00 às 16h00; e/ou Internet, no endereço eletrônico: <a href="http://www.serrana.sp.gov.br/consulta-publica/">http://www.serrana.sp.gov.br/</a>.<br /><br />
+                                Os comentários, questões, contribuições e sugestões deverão ser endereçados à Secretaria de Infraestrutura, por meio físico ou eletrônico, nesse caso ao endereço: <a href="mailto:infraestrutura@serrana.sp.gov.br">infraestrutura@serrana.sp.gov.br</a>, acompanhada do arquivo contendo as formulações apresentadas, com as justificativas cabíveis, indicando-se a correspondência ao texto do Plano Municipal de Saneamento Básico, objeto da presente consulta pública. <br /><br />
+                                Os interessados deverão se identificar (CNPJ, Razão Social e nome do representante em caso de empresa; e nome e CPF em se tratando de pessoa física), disponibilizando as informações para contato (endereço, telefone e e-mail).
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <h3 class="text-info">Arquivos disponíveis</h3>
+
+                        <h5 class="list-group-item"><a href="http://www.serrana.sp.gov.br/media/uploads/consulta_publica/pmsb.pdf" class="text-primary">Minuta de Revisão do Plano Municipal de Saneamento Básico. formato PDF</a></h5>
+                        <h5 class="list-group-item"><a href="http://www.serrana.sp.gov.br/media/uploads/consulta_publica/edital_consulta_publica.pdf" class="text-primary">Edital - Consulta Pública</a></h5>
+                        <h5 class="list-group-item"><a href="http://www.serrana.sp.gov.br/media/uploads/consulta_publica/evefs_serrana.pdf" class="text-primary">EVEF Serrana</a></h5>
+                        <h5 class="list-group-item"><a href="http://www.serrana.sp.gov.br/media/uploads/consulta_publica/minuta_contrato_consulta_publica_.pdf" class="text-primary">Minuta do Contrato - Consulta Pública</a></h5>
+                        
+                    </div>
+
+                </main>
+                <!-- End "main" -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

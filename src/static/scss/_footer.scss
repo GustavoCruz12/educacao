@@ -1,0 +1,94 @@
+/***** - footer *****/
+
+.main-footer {
+    background: $brand-dark-whiteFa;
+    font-size: 15px;
+    color: $brand-sec;
+    border-bottom: 2px solid $brand-orang;
+    margin-top: 40px;
+    a {
+        //margin: 0 20px;
+        color: $brand-sec;
+        @include transition(all .5s);
+    }
+}
+
+.footer-box {
+    margin-top: 77px;
+    margin-bottom: 37px;
+    .footer-box-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding-bottom: 0;
+        text-transform: uppercase;
+        color: $brand-black;
+        // border-bottom: 1px solid #dddddd;
+    }
+    a {
+        font-size: 14px;
+        color: $brand-sec;
+        &:hover {
+            color: $brand-orang;
+        }
+    }
+}
+
+.footer-bottom-block {
+    border-top: 1px solid $brand-grayDD;
+    line-height: 70px;
+    font-size: 12px;
+    color: $brand-black;
+    @media(max-width: $screen-xs-max){
+    line-height: 30px;
+
+    }
+    .footer-bottom-links {
+        a {
+            margin: 0 20px;
+            float: right;
+            color: $brand-black;
+            &:hover {
+                color: $brand-orang;
+            }
+            &:first-child {
+                margin: 0 0 0 20px;
+            }
+        }
+    }
+}
+
+.list-half-block {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        width: 50%;
+        line-height: 20px;
+        float: left;
+        margin-bottom: 10px;
+        a {
+            line-height: 20px;
+            font-weight: normal;
+        }
+    }
+}
+
+#scroll-top {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    background: $brand-white;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    display: table;
+    .fa {
+        display: table-cell;
+        color: $brand-green;
+        vertical-align: middle;
+    }
+}

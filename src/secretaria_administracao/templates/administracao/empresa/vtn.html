@@ -1,0 +1,78 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2 class="title"><img src="{% static 'images/secretaria_adm/botao-adm.png'%}">Apoio a Empresas e Empreendedores</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="blog-list">
+                            <h4 class="text-primary">Valor da Terra Nua - (VTN)</h4>
+                            <p class="blog-post">Em cumprimento ao disposto na Instrução Normativa RFB nº 1562, de 29 de abril de 2015, segue abaixo as informações sobre o Valor da Terra Nua - VTN do Município de Serrana para o ano de 2017.
+                            <table class="table table-striped">
+                                <caption class="post-title">Valor em Reais por ha</caption>
+                                <thead>
+                                <tr>
+                                    <th>Ano</th>
+                                    <th>Lavoura aptidão boa</th>
+                                    <th>Lavoura aptidão regular</th>
+                                    <th>Lavoura aptidão restrita</th>
+				    <th>Pastagem plantada</th>
+                                    <th>Silvicultura ou Pastagem Natural</th>
+                                    <th>Preservação da Fauna ou Flora</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>R$ 25.416,40</td>
+                                    <td>R$ 22.160,56</td>
+                                    <td> - </td>
+                                    <td> - </td>
+                                    <td>R$ 17.436,88</td>
+				    <td>R$ 12.118,33</td>	
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <p class="blog-post"><strong>Os dados sobre o levantamento são descritos a seguir:</strong></p>
+                                <p class="blog-post">Responsável pelo levantamento: <i>IEA - Instituto de Economia Agrícola - CNPJ 46.384.400/0033-26 - Praça Ramos de Azevedo, 254 - 2º e 3º andar - CEP 01037-912 - São Paulo/SP</i></p>
+                            	<p class="blog-post">Descrição simplificada da metodologia: A coleta das informações é feita por meio de questionários enviados às Casas de 
+				Agricultura de responsabilidade da Coordenadoria de Assistência Técnica Integral - CATI, presente em todos os municípios do Estado de São Paulo.<br /><br />Após o retorno dos questionários, há a análise de consistência das informações. Em caso de se detectar possível viés, ocorre a confirmação da informação, por meio de telefonema para o responsável pelo preenchimento do questionário. Após todos os ajustes necessários, as informações são agregadas de acordo com a regionalização adotada pela Secretaria de Agricultura e Abastecimento do Estado de São Paulo, EDR e pelo Governo do Estado representado pelas Regiões Administrativas (RA).<br /><br />
+				Só então são separados os valores: maior e menor, e calculadas a média, a moda e a mediana, seguindo para a publicação na revista Informações Econômica, e no site da Instituição (www.iea.sp.gov.br). Os valores de terra nua, Imóveis Rurais com benfeitorias, o preço menor, o preço maior, a média, a moda e a mediana que ocorreram em cada uma das regionalizações: EDR e RA, assim como para o Estado de São Paulo como um todo.<br /<br /></p>
+				<p class="blog-post"><strong>Período de realização da coleta de dados: Novembro/2016</strong></p>    
+			</div>
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_administracao.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

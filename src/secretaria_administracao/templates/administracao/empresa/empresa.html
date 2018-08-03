@@ -1,0 +1,166 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2 class="title"><img src="{% static 'images/secretaria_adm/botao-empresa.png'%}"> Apoio a Empresas</h2>
+                            </div>
+                        </div>
+                    </div>
+                    {% if aviso %}
+                        <div class="row">
+                            <div class="alert alert-warning">
+                                {% for av in aviso %}
+                                    <h3>{{ av.titulo }}</h3>
+                                    <div class="description">
+                                        {{ av.texto|safe }}
+                                    </div>
+                                    <p>Publicado: {{ av.data }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                    {% endif %}
+	            <hr>
+		    <div class="row">
+                    <p><strong><a href="https://e-gov.betha.com.br/e-nota/solicitacaoacesso/pesquisa_entidade.faces?p1=fvhe2UdgBVI=&p2=WzV5XD5n_zk=">SOLICITAÇÃO DE ACESSO AO SISTEMA</a></strong></p>
+		    </div>
+	            <hr>
+                    <div class="row">
+                        <a href="https://e-gov.betha.com.br/e-nota/login.faces?lastUrl=/selecaodemodulo.faces"><img src="{% static 'images/secretaria_adm/fly-nota.jpg' %}"></a>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="blog-list">
+                       {% comment %}     <a href="https://www.primaxonline.com.br/logon/index.php"><img src="{% static 'images/secretaria_adm/nota-fiscal.jpg' %}" alt="" class=""></a> {% endcomment %}
+                        </div>
+                    </div>
+                    <h3 class="text-primary">Documentos e formulários</h3>
+                    <div class="row">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                            Manuais de utilização do sistema ISSQN</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        {% if manual %}
+                                            <ul class="list-unstyled">
+                                                {% for ma in manual %}
+                                                    <li><a href="{{ ma.arquivo.url }}" class="text-primary">{{ ma.descricao }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                            Decretos</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        {% if decreto %}
+                                            <ul class="list-unstyled">
+                                                {% for ma in decreto %}
+                                                    <li><a href="{{ ma.arquivo.url }}" class="text-primary">{{ ma.descricao }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                            Legislação</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        {% if legislacao %}
+                                            <ul class="list-unstyled">
+                                                {% for ma in legislacao %}
+                                                    <li><a href="{{ ma.arquivo.url }}" class="text-primary">{{ ma.descricao }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                            Formulários</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse4" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        {% if formulario %}
+                                            <ul class="list-unstyled">
+                                                {% for ma in formulario %}
+                                                    <li><a href="{{ ma.arquivo.url }}" class="text-primary">{{ ma.descricao }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                                            Instruções normativas</a>
+                                    </h4>
+                                </div>
+                                <div id="collapse5" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        {% if normativa %}
+                                            <ul class="list-unstyled">
+                                                {% for ma in normativa %}
+                                                    <li><a href="{{ ma.arquivo.url }}" class="text-primary">{{ ma.descricao }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_administracao.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

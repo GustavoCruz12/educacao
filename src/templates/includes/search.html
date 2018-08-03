@@ -1,0 +1,41 @@
+<div class="search-screen">
+    <div class="center-popup">
+        <div class="search-cont">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="center-block">
+                        <div class="search-close" data-color="#ccc">
+                            <i class="fa fa-close"></i>
+                        </div>
+                    </div>
+                    <!-- / center-block -->
+                </div>
+                <!-- / col-xs-12 -->
+                <div class="col-xs-12">
+                    <div class="center-block search-form">
+                        <form method="get" name="search" id="search-form" action="{% url 'noticias:noticia-busca' %}">
+                            <input class="search-input" type="text" name="q" id="q" placeholder="Digite o termo a ser pesquisado">
+                            <div class="col-xs-12">
+                                <button class="btn btn-info search-load-more" id="btn-search">Procurar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- / row -->
+        </div>
+        <!-- / search-cont -->
+    </div>
+    <!-- / center-popup -->
+</div>
+<!-- / search-screen -->
+<!-- container-fluid center-gray-block -->
+{% block extra_javascript %}
+    <script>
+        $(function() {
+            $('#q').clear();
+            $('#q').focus();
+        });
+    </script>
+{% endblock %}

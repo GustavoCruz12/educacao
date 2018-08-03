@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!-- Start "aside sidebar" -->
+<aside class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+    <!-- Start "sidebar-widget" -->
+    <div class="sidebar-widget clrearfix wow fadeIn">
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            <div class="main-title clearfix">
+                <h3 class="title border-b-dark-white">Informações<span class="border blue-bg"></span></h3>
+            </div>
+            <div class="sidebar-widget-contnet clrearfix">
+                <ul class="list-sidebar">
+                    <li><a href="{% url 'esportes:esporte_noticia' %}">Noticias</a></li>
+                    <li><a href="{% url 'esportes:esporte' %}">Sobre a Secretaria</a></li>
+                    <li><a href="{% url 'esportes:esporte_secretario' %}">Conheça o Secretário</a></li>
+                    <li><a href="{% url 'esportes:esporte_localizacao' %}">Endereços e telefones</a></li>
+                    <li><a href="{% url 'contato:contato_view' %}">Contato</a></li>
+                </ul>
+            </div>
+            <!-- sidebar-widget-contnet -->
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            {% if banner337x280_esportes %}
+                {% for bann3 in banner337x280_esportes %}
+                    <div class="main-title clearfix">
+                        <h3 class="title border-b-dark-white orange text-center">{{ bann3.titulo }} </h3>
+                    </div>
+                    <div class="sidebar-widget-contnet clrearfix">
+                        <!-- Start "adv block" -->
+                        <div class="adv-blcok clearfix">
+                            {% if bann3.url_externa == 'sim' %}
+                                <a href="{{ bann3.url }}">
+                                    <img class="img-responsive" src="{{ bann3.banner.url }}" alt="">
+                                </a>
+                            {% else %}
+                                <a href="{{ bann3.get_absolute_url }}">
+                                    <img class="img-responsive" src="{{ bann3.banner.url }}" alt="">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <!-- End "adv block" -->
+                    </div>
+                    <!-- sidebar-widget-contnet -->
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn">
+            {% load thumbnail_maker %}
+            {% if galeria_cet %}
+                {% for ga2 in galeria_cet %}
+                    <div class="main-title clearfix">
+                        <h3 class="title border-b-dark-white">{{ ga2.titulo }}<span class="border orange-bg"></span></h3>
+                    </div>
+                    <div class="sidebar-widget-contnet clrearfix">
+                        <div class="gallery-block-small image-block">
+                            {% for gal2 in ga2.imagens.all %}
+                                <a class="gallery-small-image" href="{{ gal2.imagem.url }}" data-lightbox="imagens" data-title="{{ gal2.titulo }}">
+                                    {% usethumbnail gal2.imagem "thumbs" as im %}
+                                        <img src="{{ gal2.imagem.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                    {% endusethumbnail %}
+                                    <i class="fa fa-search-plus "></i>
+                                </a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <!-- sidebar-widget-contnet -->
+                {% endfor %}
+                {% else %}
+                <div class="sidebar-widget-contnet clrearfix"></div>
+            {% endif %}
+        </div>
+        <!-- End "sidebar-widget" -->
+        <!-- Start "sidebar-widget" -->
+        <div class="sidebar-widget clrearfix wow fadeIn bg-info">
+            <h5><strong>Secretaria de Cultura, Esportes e Turismo</strong></h5>
+            <p><strong>Endereço: </strong>Rua Estrela Matutina 100</p>
+            <i><strong>Telefone: </strong>(16) 3987-7777</i>
+        </div>
+        <!-- End "sidebar-widget" -->
+    </div>
+</aside>
+<!-- / secondary col-xs-12 col-sm-4  hidden-xs -->
+<!-- End "aside sidebar" -->

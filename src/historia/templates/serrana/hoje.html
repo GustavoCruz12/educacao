@@ -1,0 +1,82 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "hot-posts" -->
+                <div class="col-xs-12 hot-posts">
+
+                </div>
+                <!-- / hot-posts -->
+                <!-- End "hot-posts" -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="blog-list blog-post wow fadeInUp">
+                                <!-- container-fluid center-gray-block -->
+                                <div class="describe">
+                                    <h4 class="text-primary">A cidade</h4>
+                                    <p class="text-justify">
+                                        Está localizada a uma latitude 21º12'41" sul e a uma longitude 47º35'44" oeste, estando a uma altitude de 427 metros. Sua população estimada pelo último Censo, realizado em 2010, era de 39.574 habitantes. O município possui uma área de 125,744 km².<br />
+                                        <hr>
+
+                                        <strong>Prefeito:</strong> Valério Antônio Galante <br />
+                                        <strong>Vice-prefeito:</strong> Leonardo Capitelli <br />
+                                        <strong>Presidente da câmara:</strong> Dewilson Braga dos Reis PP <br /><br />
+                                    </p>
+                                    <h4 class="text-primary"> Educação</h4>
+                                    <p class="text-justify">
+                                        Serrana possui o Sistema Universidade Aberta do Brasil (UAB) que tem como prioridade a formação de professores para a Educação Básica. O Polo Presencial da UAB, em parceria com as Universidades Federais de São João Del Rei e Alfenas, 0ferecem cursos de pós-graduação, nas seguintes áreas: Especialização em Práticas de Alfabetização e Letramento, Especialização em Matemática e Práticas de Ensino e Bacharelado em Administração, com duração de quatro anos.<br />
+
+                                        Serrana conta também, desde 2009, com uma unidade da Etec do Centro Paula Souza.<br />
+                                        <br />
+                                    </p>
+                                    <h4 class="text-primary">Economia</h4>
+                                    <p class="text-justify">
+                                        Dentre as atividades econômicas do município, as que mais se destacam são: a lavoura de cana-de-açúcar, a prestação de serviços em diversas áreas, as indústrias de usinagem e implementos agroindustriais e o comércio.<br />
+
+                                        Serrana se destaca como um grande polo industrial e de logística do interior de São Paulo, com destaque para a usina de açúcar e álcool Usina da Pedra.<br /><br />
+                                    </p>
+                                    <p>
+                                    <h4>Serrana na Decada de 50</h4>
+                                    <img src="{% static 'images/historia/serrana50.jpg' %}"><br />
+                                    </p>
+                                    <br />
+                                    <p>
+                                    <h4>Serrana hoje</h4>
+                                    <img src="{% static 'images/historia/serrana2013.jpg' %}"><br />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "serrana/includes/aside_mensagens_serrana.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

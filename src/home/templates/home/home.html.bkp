@@ -1,0 +1,511 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "hot-posts" -->
+                <div class="col-xs-12 hot-posts margin-b-widget">
+                    <div class="hot-posts-left wow pulse" data-wow-duration="0.5s">
+                        <div id="hot-posts-left-slider" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% if noticia_destaque_1 %}
+                                    <!-- Start "image-overlay-block" -->
+                                    {% for not_dest in noticia_destaque_1 %}
+                                        <div class="image-overlay-block item {% if forloop.first %}active{% endif %}" style="background-image:url({{ not_dest.imagem.url }});">
+                                            <div class="overlay-gradient">
+                                            </div>
+                                            <!-- / overlay-gradient -->
+                                            <div class="image-overlay-block-content">
+                                                <div class="top-part clearfix">
+                                                    <div class="news-tag orange-bg pull-left">
+                                                        Destaques
+                                                    </div>
+                                                    <div class="carousel-control-dark">
+                                                        <div class="controls pull-right">
+                                                            <a class="controls-left carousel-control" href="#hot-posts-left-slider" role="button" data-slide="prev">
+                                                                <i class="fa fa-angle-left"></i>
+                                                            </a>
+                                                            <a class="controls-right carousel-control" href="#hot-posts-left-slider" role="button" data-slide="next">
+                                                                <i class="fa fa-angle-right"></i>
+                                                            </a>
+                                                        </div>
+                                                        <!-- controls -->
+                                                    </div>
+                                                    <!-- carousel-control-dark -->
+                                                </div>
+                                                <!-- / top-part -->
+                                                <div class="bottom-part clearfix">
+                                                    <div class="top clearfix">
+                                                        <span class="news-tag blue-bg margin-b-16 pull-left">{{ not_dest.orgao }}</span>
+                                                        <span class="rating-block pull-right"></span>
+                                                    </div>
+                                                    <h3 class="title"><a href="{{ not_dest.get_absolute_url }}">{{ not_dest.titulo }}</a></h3>
+                                                    <div class="post-info margin-b-19">
+                                                        <span><a href="">{{ not_dest.author }} </a></span>
+                                                        <span><a href="">{{ not_dest.publicacao }}</a></span>
+                                                    </div>
+                                                </div>
+                                                <!-- / bottom-part -->
+                                            </div>
+                                            <!-- / image-overlay-block-content -->
+                                        </div>
+                                        <!-- / image-overlay-block -->
+                                        <!-- End "image-overlay-block" -->
+                                    {% endfor %}
+                                {% else %}
+                                    <h1>Nenhuma noticia para esta seção</h1>
+                                {% endif %}
+                            </div>
+                            <!-- / carousel-inner -->
+                        </div>
+                        <!-- / carousel slide -->
+                    </div>
+                    <!-- / hot-posts-left -->
+                    <div class="hot-posts-middle wow pulse" data-wow-duration="1s">
+                        {% if not_destaque_2 %}
+                            {% for not_dest_2 in not_destaque_2 %}
+                                <!-- Start "image-overlay-block" -->
+                                <div class="image-overlay-block" style="background-image:url({{ not_dest_2.imagem.url }});">
+                                    <div class="overlay-gradient">
+                                    </div>
+                                    <!-- / overlay-gradient -->
+                                    <div class="image-overlay-block-content">
+                                        <div class="top-part clearfix">
+                                        </div>
+                                        <!-- / top-part -->
+                                        <div class="bottom-part clearfix">
+                                            <div class="top clearfix">
+                                            <span class="news-tag fuchsia-bg margin-b-16 pull-left">
+                                                {{ not_dest_2.orgao }}
+                                            </span>
+                                            </div>
+                                            <h3 class="title"><a href="{{ not_dest_2.get_absolute_url }}">{{ not_dest_2.titulo }}</a></h3>
+                                            <div class="post-info margin-b-19">
+                                                <span><a href="">{{ not_dest_2.author }}</a></span>
+                                                <span><a href="">{{ not_dest_2.publicacao }}</a></span>
+                                            </div>
+                                        </div>
+                                        <!-- / bottom-part -->
+                                    </div>
+                                    <!-- / image-overlay-block-content -->
+                                </div>
+                                <!-- / image-overlay-block -->
+                                <!-- End "image-overlay-block" -->
+                            {% endfor %}
+                        {% else %}
+                            <h1>Nenhuma noticia para esta seção</h1>
+                        {% endif %}
+                    </div>
+                    <!-- / hot-posts-middle -->
+                    <div class="hot-posts-right">
+                        {% if vid_destaque %}
+                            {% for vid_dest in vid_destaque %}
+                                <!-- Start "hot-posts-video-half-height" -->
+<div class="image-overlay-block hot-posts-video-half-height wow pulse" style="background-image:url({{ vid_dest.imagem.url }});" data-wow-duration="1.5s">
+                                    <div class="overlay-gradient">
+                                    </div>
+                                    <!-- / overlay-gradient -->
+                                    <div class="image-overlay-block-content">
+                                        <div class="video-icon">
+                                            {% if vid_dest.url_externa == 'nao' %}
+                                                <a href="{{ vid_dest.get_absolute_url }}"><i class="fa fa-play"></i></a>
+                                            {% else %}
+                                                <a href="{{ vid_dest.url }}"><i class="fa fa-play"></i></a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="top-part clearfix">
+                                            <div class="news-tag orange-bg pull-left">
+                                                videos
+                                            </div>
+                                        </div>
+                                        <!-- / top-part -->
+                                        <div class="bottom-part clearfix">
+                                            {% if vid_dest.url_externa == 'nao' %}
+                                                <h3 class="title"><a href="{{ vid_dest.get_absolute_url }}">{{ vid_dest.titulo }}</a></h3>
+                                            {% else %}
+                                                <h3 class="title"><a href="{{ vid_dest.url }}">{{ vid_dest.titulo }}</a></h3>
+                                            {% endif %}
+                                        </div>
+                                        <!-- / bottom-part -->
+                                    </div>
+                                    <!-- / image-overlay-block-content -->
+                                </div>
+                                <!-- / image-overlay-block -->
+                                <!-- End "hot-posts-video-half-height" -->
+                            {% endfor %}
+                        {% else %}
+                            <h1>Não há videos publicados</h1>
+                        {% endif %}
+                    </div>
+                    <!-- / hot-posts-right -->
+                </div>
+                <!-- / hot-posts -->
+                <!-- End "hot-posts" -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- include noticias da seção de secretarias -->
+                    {% include "home/includes/noticia_secretarias.html" %}
+                    <!-- row -->
+                    <div class="row">
+                        <!-- Start "adv block" -->
+                        <div class="adv-blcok-body margin-b-widget col-xs-12 clearfix">
+                            {% if banner_729x90 %}
+                                {% for bann2 in banner_729x90 %}
+                                    {% if bann2.url_externa == 'sim' %}
+                                        <a href="{{ bann2.url }}">
+                                            <img class="img-responsive" src="{{ bann2.banner.url }}" alt="">
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ bann2.get_absolute_url }}">
+                                            <img class="img-responsive" src="{{ bann2.banner.url }}" alt="">
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <!-- End "adv block" -->
+                    </div>
+                    <!-- row -->
+                    {% if vid_videos_2 %}
+                        <div class="row slide wow margin-b-widget fadeInUp" id="videos-slider">
+                            <div class="col-xs-12 main-title clearfix">
+                                <h3 class="title border-b-dark-white">vídeos <span class="border orange-bg"></span></h3>
+                            </div>
+                            <div class="video-posts margin-b-widget active clearfix">
+                                {% for vid_videos2 in vid_videos_2 %}
+                                    <div class="col-xs-12 col-sm-6 col-md-4 video-margin">
+                                        <!-- Start "video-block-fix-height" -->
+                                        <a href="{{ vid_videos2.get_absolute_url }}">
+                                            <div class="image-overlay-block video-block-fix-height" style="background-image:url({{ vid_videos2.imagem.url }});">
+                                                <div class="overlay-gradient">
+                                                </div>
+                                                <!-- / overlay-gradient -->
+                                                <div class="image-overlay-block-content">
+                                                    <div class="video-icon">
+                                                        <a href="{{ vid_videos2.get_absolute_url }}"><i class="fa fa-play"></i></a>
+                                                    </div>
+                                                    <div class="top-part clearfix">
+                                                        <div class="news-tag orange-bg pull-left">
+                                                            {{ vid_videos2.get_secretaria_display }}
+                                                        </div>
+                                                    </div>
+                                                    <!-- / top-part -->
+                                                    <div class="bottom-part clearfix">
+                                                        <h3 class="title"><a href="{{ vid_videos2.get_absolute_url }}">{{ vid_videos2.titulo }}</a></h3>
+                                                    </div>
+                                                    <!-- / bottom-part -->
+                                                </div>
+                                                <!-- / image-overlay-block-content -->
+                                            </div>
+                                        </a>
+                                        <!-- / image-overlay-block -->
+                                        <!-- End "video-block-fix-height" -->
+                                    </div>
+                                    <!-- / col-xs-12 col-sm-6 col-md-4 -->
+                                {% endfor %}
+                            </div>
+                            <!-- / video-posts -->
+                        </div>
+                        <!-- row -->
+                    {% endif %}
+                    <div class="row wow fadeInUp">
+                        <div class="col-xs-12">
+                            <div class="newsletter-block margin-b-widget">
+                                <div class="newsletter-block-cont">
+                                    <h3>Receber notícias em seu email</h3>
+                                    <p>Inscreva-se para receber notícias em seu email.</p>
+                                    <form action="x.php">
+                                        <div class="input-p">
+                                            <input class="input" type="text" placeholder="insira aqui seu e-mail">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                        <input class="submit" type="submit" value="inscrever-se">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col-xs-12 -->
+                    </div>
+                    <!-- /row wow fadeInUp -->
+                    <div class="row wow fadeInUp margin-b-widget">
+                        {% if veja_tambem %}
+                            <div class="col-xs-12 main-title">
+                                <h3 class="title border-b-dark-white">Veja também<span class="border fuchsia-bg"></span></h3>
+                            </div>
+                        {% endif %}
+                        <div class="widget-full-row">
+                            <div class="col-xs-12 col-md-6">
+                                <!-- Start "big-image-long-description" -->
+                                <div class="big-image-long-description">
+                                    {% if veja_tambem %}
+                                        {% for veja_t in veja_tambem %}
+                                            <div class="image-overlay-block image-overlay-block-fixed-hight" style="background-image:url({{ veja_t.imagem.url }});">
+                                                <div class="overlay-gradient">
+                                                </div>
+                                                <!-- / overlay-gradient -->
+                                                <div class="image-overlay-block-content">
+                                                    <div class="top-part clearfix">
+                                                        <span class="news-tag fuchsia-bg margin-b-32 pull-left">
+                                                            {{ veja_t.get_secretaria_display }}
+                                                        </span>
+                                                    </div>
+                                                    <!-- / top-part -->
+                                                    <div class="bottom-part clearfix">
+                                                        <h3 class="title"><a href="{{ veja_t.get_absolute_url }}">{{ veja_t.titulo }}</a></h3>
+                                                        <div class="post-info margin-b-10">
+                                                            <span><a href="">{{ veja_t.author }}</a></span>
+                                                            <span><a href="">{{ veja_t.publicacao }}</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- / bottom-part -->
+                                                </div>
+                                                <!-- / image-overlay-block-content -->
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <!-- / big-image-long-description -->
+                                <!-- End "big-image-long-description" -->
+                            </div>
+                            <!-- / col-xs-12 col-md-6 -->
+                            <div class="col-xs-12 col-md-6">
+                                {% if veja_tambem %}
+                                    {% for veja_t1 in veja_tambem1 %}
+
+                                        <!-- Start "image-link-block" -->
+                                        <div class="image-link-block clearfix">
+                                            <a href="">
+                                                <div class="image-block" style="background-image:url({{ veja_t1.imagem.url }});">
+                                                    <i class="fa fa-file-image-o"></i>
+                                                </div>
+                                            </a>
+                                            <div class="linke-block">
+                                                <h3 class="title"><a href="{{ veja_t1.get_absolute_url }}">{{ veja_t1.titulo }}</a></h3>
+                                                <div class="post-info margin-b-19">
+                                                    <span><a href=""><i class="fa fa-clock-o"></i>{{ veja_t1.publicacao }}</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- / image-link-block clearfix-->
+                                        <!-- End "image-link-block" -->
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <!-- / col-xs-12 col-md-6 -->
+                        </div>
+                        <!--  widget-full-row -->
+                    </div>
+                    <!-- row -->
+                    <!-- container-fluid center-gray-block -->
+                    <div class="container-fluid main-content">
+                        <!-- Start "adv block" -->
+                        <div class="adv-blcok-two margin-b-widget col-xs-12 clearfix">
+                            {% if banner_729x90_1 %}
+                                {% for bann21 in banner_729x90_1 %}
+                                    {% if bann21.url_externa == 'sim' %}
+                                        <a href="{{ bann21.url }}">
+                                            <img class="img-responsive" src="{{ bann21.banner.url }}" alt="">
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ bann21.get_absolute_url }}">
+                                            <img class="img-responsive" src="{{ bann21.banner.url }}" alt="">
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <!-- End "adv block" -->
+                    </div>
+                </main>
+                <!-- End "main" -->
+                {% include "home/includes/aside_home.html" %}                        </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- / container-fluid main-content-->
+    <div class="container-fluid margin-b-widget center-gray-block">
+        <div class="container">
+            <div class="row">
+                {% if antigas1 %}
+                    {% for ant1 in antigas1 %}
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <!-- Start "big-image-long-description" -->
+                            <div class="big-image-long-description">
+                                <div class="image-overlay-block image-overlay-block-fixed-hight margin-b-20" style="background-image:url({{ ant1.imagem.url }});">
+                                    <div class="overlay-gradient">
+                                    </div>
+                                    <!-- / overlay-gradient -->
+                                    <div class="image-overlay-block-content">
+                                        <div class="top-part clearfix">
+                                            <span class="news-tag blue-bg margin-b-32 pull-left">
+                                             {{ ant1.secretaria }}
+                                             </span>
+                                        </div>
+                                        <!-- / top-part -->
+                                        <div class="bottom-part clearfix">
+                                            <h3 class="title"><a href="{{ ant1.get_absolute_url }}">{{ ant1.titulo }}</a></h3>
+                                            <div class="post-info margin-b-10">
+                                                <span><a href="">{{ ant1.author }}</a></span>
+                                                <span><a href="">{{ ant1.publicacao }}</a></span>
+                                            </div>
+                                        </div>
+                                        <!-- / bottom-part -->
+                                    </div>
+                                    <!-- / image-overlay-block-content -->
+                                </div>
+                            </div>
+                            <!-- / big-image-long-description -->
+                        </div>
+                        <!-- col-xs-12 col-sm-6 col-md-4 -->
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <div class="main col-xs-12 col-sm-8">
+                    {% load thumbnail_maker %}
+                    {% if galeria1 %}
+                        {% for ga1 in galeria1 %}
+                            <div class="row wow fadeInUp margin-b-widget">
+                                <div class="col-xs-12 main-title clearfix">
+                                    <h3 class="title border-b-dark-white">{{ ga1.titulo }} <span class="border orange-bg"></span></h3>
+                                </div>
+                                <div class="col-xs-12 gallery-block-two">
+                                    {% for gal1 in ga1.imagens.all %}
+                                        <a class="gallery-small-image" href="{{ gal1.imagem.url }}" data-lightbox="{{ gal1.titulo }}" data-title="{{ gal1.titulo }}">
+                                            {% usethumbnail gal1.imagem "thumbs" as im %}
+                                                <img src="{{ gal1.imagem.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                            {% endusethumbnail %}
+
+                                            <i class="fa fa-search-plus "></i>
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <!-- main col-xs-12 col-sm-8 -->
+                {% if banner_300x400 %}
+                    <div class="secondary side-bar col-xs-12 col-sm-4 hidden-xs">
+                        <!-- Start "sidebar-widget" -->
+                        {% for bann4 in banner_300x400 %}
+                            <div class="sidebar-widget clrearfix wow fadeIn">
+                                <div class="main-title clearfix">
+                                    <h3 class="title border-b-dark-white orange text-center">{{ bann4.titulo }} </h3>
+                                </div>
+                                <div class="sidebar-widget-contnet clrearfix">
+                                    <!-- Start "adv block" -->
+                                    <div class="adv-blcok clearfix">
+                                        <a href="{{ bann4.get_absolute_url }}">
+                                            <img class="img-responsive" src="{{ bann4.banner.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <!-- End "adv block" -->
+                                </div>
+                                <!-- sidebar-widget-contnet -->
+                            </div>
+                            <!-- End "sidebar-widget" -->
+                        {% endfor %}
+                    </div>
+                    <!-- secondary side-bar col-xs-12 col-sm-4 -->
+                {% endif %}
+            </div>
+            <!-- / row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- /container-fluid -->
+    <div class="container-fluid center-gray-block margin-b-widget padding-b-10">
+        <div class="container">
+            <div class="row">
+                {% if antigas2 %}
+                    {% for ant2 in antigas2 %}
+                        <!-- col-xs-12 col-sm-6 col-md-4 -->
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+
+                            <!-- Start "image-one-of-three-block" -->
+                            <div class="image-one-of-three-block vertical-image clearfix">
+                                <div class="width-100p">
+                                    <a href="{{ ant2.get_absolute_url }}">
+                                        <div class="image-block " style="background-image:url({{ ant2.imagem.url }});">
+                                            <i class="fa fa-file-image-o"></i>
+                                            <div class="overlay-gradient">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="width-100p">
+                                    <div class="clearfix">
+                                        <span class="news-tag blue-bg pull-left">{{ ant2.secretaria }}</span>
+                                    </div>
+                                    <!-- / clearfix -->
+                                    <div class="clearfix">
+                                        <div class="linke-block">
+                                            <h3 class="title"><a href="{{ ant2.get_absolute_url }}">{{ ant2.titulo }}</a></h3>
+                                            <div class="post-info">
+                                                <span><a href="">{{ ant2.author }}</a></span>
+                                                <span><a href="">{{ ant2.publicacao }}</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- / clearfix -->
+                                </div>
+                                <!-- / col-xs-12 col-md-8 -->
+                            </div>
+                            <!-- / image-one-of-three-block clearfix -->
+                            <!-- End "image-one-of-three-block" -->
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    <div class="container-fluid main-content">
+        <!-- Start "adv block" -->
+        <div class="adv-blcok-two margin-b-widget col-xs-12 clearfix">
+            {% if banner_729x90_footer %}
+                {% for bann21 in banner_729x90_footer %}
+                    {% if bann21.url_externa == 'sim' %}
+                        <a href="{{ bann21.url }}">
+                            <img class="img-responsive" src="{{ bann21.banner.url }}" alt="">
+                        </a>
+                    {% else %}
+                        <a href="{{ bann21.get_absolute_url }}">
+                            <img class="img-responsive" src="{{ bann21.banner.url }}" alt="">
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <!-- End "adv block" -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

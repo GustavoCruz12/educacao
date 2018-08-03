@@ -1,0 +1,64 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2>Departamento de Água e Esgoto de Serrana</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="post-pic">
+                                <img src="{% static 'images/daes/daes.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="post-cont-type clearfix">
+                                <p class="text-justify">
+                                    Serrana é uma cidade privilegiada com relação ao saneamento básico: 99,9% da população é servida de água encanada. Toda a água consumida e distribuída pelo DAES vem de um imenso reservatório de águas subterrâneas chamado Aqüífero Guarani, que se estende por 7 Estados brasileiros, Argentina, Uruguai e Paraguai.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont-type clearfix">
+                        <p class="text-justify">
+                            A água clorada e fluoretada é conduzida por tubulações aos reservatórios, de onde é distribuída para as redes de abastecimento até chegar às residências, passando pelo hidrômetro, que é o aparelho que mede o consumo de água.
+                        </p>
+                        <p class="text-justify">
+                            No laboratório do DAES, amostras de água coletadas diariamente em diversos pontos da cidade passam por análises Bacteriológicas e Físico-Químicas, visando controlar a sua qualidade e potabilidade.
+                        </p>
+                        <p class="text-justify">
+                            O DAES segue à risca as normas e o padrão de potabilidade estabelecidos pelo Ministério da Saúde e o resultado é água de excelente qualidade para o consumo da população.
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "includes/aside_mensagens_infra.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    {% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
+

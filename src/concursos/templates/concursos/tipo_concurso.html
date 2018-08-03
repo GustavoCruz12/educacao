@@ -1,0 +1,84 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12 col-sm-8">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                <h2><img src="{% static 'images/concursos/botao-concursos.png' %}" alt=""> Concursos públicos</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <form action="{% url 'concursos:concurso_view' %}" method="get"  class="form-horizontal">
+                                <div class="form-group">
+                                    <select  name="t" class="form-control">
+                                        <option value="0">Escolha a modalidade</option>
+                                        {% for tip in tipo %}
+                                            <option value="{{ tip.id }}">{{ tip.descricao }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select  name="a" class="form-control">
+                                        <option value="0">Escolha o ano</option>
+                                        {% for an in ano %}
+                                            <option value="{{ an.ano }}">{{ an.ano }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <button class="btn btn-info">mostrar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <hr>
+                        <div class="container-fluid main-content">
+                            <div class="description text-success">
+                                A Prefeitura de Serrana reservou este espaço para manter você
+                                atualizado de acordo com as publicações relativas aos concursos
+                                e processos seletivos de nossa cidade.<br />
+                                <br />
+                                <i>Utilize os filtros para visualizar os arquivos que deseja</i><br />
+                                <hr>
+                                <br /><br />
+                                Para mais informações entrar em contato no Recursos Humanos.<br />
+                                <p class="blog-post">
+                                    <strong>
+                                        Rua: Dr. Tancredo de Almeida Neves, 176<br />
+                                        CEP: 14150-000<br />
+                                        Telefone: 3987-9878 / 3987-9848
+                                    </strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- SIDEBAR AQUI -->
+                {% include "home/includes/aside_home.html" %}
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+

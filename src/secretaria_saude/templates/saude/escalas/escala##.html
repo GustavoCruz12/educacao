@@ -1,0 +1,113 @@
+{% extends "base_home.html" %}
+{% load staticfiles %}
+{% block topbar %}
+    {% include "includes/topbar.html" %}
+{% endblock %}
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+{% block navigation_bar %}
+    {% include "includes/navigation_bar.html" %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Start "main" -->
+                <main class="main col-xs-12">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="row wow styleing-breadcrumb fadeInUp">
+                            <div class="col-xs-12">
+                                {% for con in concurso %}
+                                    {% if forloop.first %}
+                                        <h3><strong>{{ con.tipo }} - {{ con.ano }}</strong> <a href="{% url 'concursos:tipo_concurso_view' %}" class="btn btn-info">Voltar</a></h3>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% if concurso %}
+                                <!-- Table -->
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Descrição</th>
+                                        <th>Numero</th>
+                                        <th>Ano</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for con in concurso %}
+                                        <tr>
+                                            <td><a href="{% url 'concursos:concurso_detalhe_view' con.pk %}">{{ con.descricao }}</a></td>
+                                            <td>{{ con.numero }}</td>
+                                            <td>{{ con.ano }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                                <!-- End Table -->
+                            {% else %}
+                                <div class="alert alert-warning" role="alert">
+                                <h5>Escolha uma modalidade para exibir as informações.</h5>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- / container -->
+    </div>
+    <!-- / container-fluid main-content-->
+    <div class="container">
+        <div class="row">
+            <div class="container-fluid center-gray-block">
+                <div class="sidebar-widget-contnet clrearfix">
+                    <p class="blog-post">
+                        Aqui você encontrará os editais sobre os concursos públicos e processos seletivos realizados no Município, utilize o filtro acima para escolher a modalidade do concurso.
+                        Para mais informações entrar em contato no recursos humanos.
+                    </p>
+                </div>
+                <div class="sidebar-widget-contnet clrearfix">
+                    <p class="blog-post">Para mais informações entrar em contato no Recursos Humanos.</p><br />
+                    <p class="blog-post">
+                        <strong>
+                            Rua: Dr. Tancredo de Almeida Neves, 176<br />
+                            CEP: 14150-000<br />
+                            Telefone: 3987-9878 / 3987-9848
+                        </strong>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- container -->
+    </div>
+    <!-- container-fluid center-gray-block -->
+    <!-- container-fluid center-gray-block -->
+    <div class="container-fluid main-content">
+        <!-- Start "adv block" -->
+        <div class="adv-blcok-two col-xs-12 clearfix">
+            <a href="#">
+                <img class="img-responsive" src="{% static "test-images/adv.jpg" %}" alt="">
+            </a>
+        </div>
+        <!-- End "adv block" -->
+    </div>
+    <!-- row -->
+    </div>
+    <!-- / page boxed-style -->
+{% endblock %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+{% block search %}
+    {% include "includes/search.html" %}
+{% endblock %}
+

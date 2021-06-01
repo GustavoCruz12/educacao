@@ -39,5 +39,5 @@ simplegeneric==0.8.1
 six==1.10.0
 -e git+https://github.com/mariocesar/sorl-thumbnail.git@66f0f355a976c76d712fdb83927175840c3a2478#egg=sorl_thumbnail
 traitlets==4.3.2
-urllib3==1.21.1
+urllib3==1.26.5
 wcwidth==0.1.7
